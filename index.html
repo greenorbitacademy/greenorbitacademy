@@ -26,65 +26,127 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Mentor
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Updated: Jul 07 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
 
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
+      <!-- Logo -->
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Green Orbit Academy</h1>
+        <h1 class="sitename m-0">Green Orbit Academy</h1>
       </a>
 
+      <!-- Navigation -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home<br></a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="workshops.html">Workshops</a></li>
-          <li><a href="workshops.html">Masterclasses</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html" class="active">Home</a></li>
+
+          <li class="dropdown">
+            <a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="trainers.html">Trainers</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="events.html">Events</a></li>
               <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <li><a href="webinars.html">Webinars</a></li>
+
+          <li class="dropdown">
+            <a href="#"><span>CPD</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="courses/index.html">Courses</a></li>
+              <li><a href="workshops/index.html">Workshops</a></li>
+              <li><a href="masterclasses/index.html">Masterclasses</a></li>
+              <li><a href="programmes/index.html">Training Programmes</a></li>
+            </ul>
+          </li>
         </ul>
+        <!-- Mobile toggle button -->
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="courses.html">Get Started</a>
+      <!-- Contact button -->
+      <a class="btn-getstarted" href="contact.html"><strong>CONTACT US</strong></a>
 
     </div>
   </header>
+  <!-- End Header -->
+
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.querySelector('.mobile-nav-toggle');
+    const navmenu = document.getElementById('navmenu');
+
+    mobileToggle.addEventListener('click', () => {
+      navmenu.classList.toggle('navbar-mobile');
+      mobileToggle.classList.toggle('bi-list');
+      mobileToggle.classList.toggle('bi-x');
+    });
+
+    // Dropdown toggle for mobile
+    document.querySelectorAll('.navmenu .dropdown > a').forEach(el => {
+      el.addEventListener('click', function(e) {
+        if (navmenu.classList.contains('navbar-mobile')) {
+          e.preventDefault();
+          this.nextElementSibling.classList.toggle('dropdown-active');
+        }
+      });
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#navmenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navmenu.classList.contains('navbar-mobile')) {
+          navmenu.classList.remove('navbar-mobile');
+          mobileToggle.classList.add('bi-list');
+          mobileToggle.classList.remove('bi-x');
+        }
+      });
+    });
+  </script>
+
+  <style>
+    /* Mobile-specific adjustments */
+    @media (max-width: 1199px) {
+      #navmenu ul {
+        display: none;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        border-top: 1px solid #ddd;
+      }
+
+      #navmenu.navbar-mobile ul {
+        display: flex;
+      }
+
+      #navmenu ul li {
+        margin: 0.5rem 0;
+      }
+
+      #navmenu ul li .dropdown > ul {
+        display: none;
+        padding-left: 1rem;
+      }
+
+      #navmenu ul li .dropdown-active {
+        display: block;
+      }
+    }
+  </style>
+
+</body>
+</html>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section bg-light">
 
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
@@ -99,7 +161,7 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section bg-accent">
 
       <div class="container">
 
@@ -132,13 +194,13 @@ Through our workshops, courses, and learning pathways, we help you develop the s
     </section><!-- /About Section -->
 
     <!-- Counts Section -->
-    <section id="counts" class="section counts light-background">
+    <section id="counts" class="section counts bg-light">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6 text-dark">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
               <p>Students</p>
@@ -324,103 +386,66 @@ Through our workshops, courses, and learning pathways, we help you develop the s
   </div>
 
 </section><!-- /Features Section -->
+<!-- Learning Opportunities Section -->
+<section id="learning" class="courses section">
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Learning Opportunities</h2>
+    <p>Explore Our Courses, Workshops, and Masterclasses</p>
+  </div><!-- End Section Title -->
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Courses</h2>
-        <p>Popular Courses</p>
-      </div><!-- End Section Title -->
+  <div class="container">
+    <div class="row">
 
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="course-item">
-              <img src="assets/img/course/course-1.webp" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Web Development</p>
-                  <p class="price">$169</p>
-                </div>
-
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/person/ryan.jpg" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Ryan</a>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;50
-                    &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;65
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="course-item">
-              <img src="assets/img/course/course-2.webp" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Marketing</p>
-                  <p class="price">$250</p>
-                </div>
-
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/person/ryan.jpg" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Ryan</a>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;35
-                    &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;42
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="course-item">
-              <img src="assets/img/course/course-3.webp" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <p class="category">Content</p>
-                  <p class="price">$180</p>
-                </div>
-
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/person/ryan.jpg" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Ryan</a>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;20
-                    &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;85
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
+      <!-- Courses -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+        <div class="course-item">
+          <a href="courses/index.html">
+            <img src="assets/img/course/course-1.webp" class="img-fluid" alt="Courses">
+          </a>
+          <div class="course-content">
+            <h3><a href="courses/index.html">Professional Courses</a></h3>
+            <p class="description">
+              Structured programmes designed to enhance sector-specific skills. Build expertise in digital marketing, web development, content creation, and more.
+            </p>
+          </div>
         </div>
+      </div><!-- End Courses Item -->
 
-      </div>
+      <!-- Workshops -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+        <div class="course-item">
+          <a href="workshops/index.html">
+            <img src="assets/img/course/course-2.webp" class="img-fluid" alt="Workshops">
+          </a>
+          <div class="course-content">
+            <h3><a href="workshops/index.html">Hands-on Workshops</a></h3>
+            <p class="description">
+              Interactive sessions to apply learning in real-world contexts. Explore branding strategy, sustainable marketing, campaign planning, and storytelling.
+            </p>
+          </div>
+        </div>
+      </div><!-- End Workshops Item -->
 
-    </section><!-- /Courses Section -->
+      <!-- Masterclasses -->
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+        <div class="course-item">
+          <a href="masterclasses/index.html">
+            <img src="assets/img/course/course-3.webp" class="img-fluid" alt="Masterclasses">
+          </a>
+          <div class="course-content">
+            <h3><a href="masterclasses/index.html">Advanced Masterclasses</a></h3>
+            <p class="description">
+              Deep-dive sessions led by industry experts. Develop strategic insight and advanced skills in communications, space & sustainability, and AI & digital transformation.
+            </p>
+          </div>
+        </div>
+      </div><!-- End Masterclasses Item -->
+
+    </div>
+  </div>
+</section><!-- /Learning Opportunities Section -->
 
     <!-- Trainers Index Section -->
     <section id="trainers-index" class="section trainers-index">
@@ -429,30 +454,53 @@ Through our workshops, courses, and learning pathways, we help you develop the s
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="assets/img/person/ryan.jpg" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Ryan Laird</h4>
-                <span>Director</span>
-                <p>
-                  Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                </p>
-                <div class="social">
-                  <a href="https://x.com/rjmlaird"><i class="bi bi-twitter-x"></i></a>
-                  <a href="https://facebook.com/rjmlaird"><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/rjmlaird"><i class="bi bi-instagram"></i></a>
-                  <a href="https://linkedin.com/in/rjmlaird87"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+<div class="col-12 d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="100">
+  <div class="team-card d-flex w-100 shadow-sm p-3 rounded">
+    
+    <!-- Image Section -->
+    <div class="team-image me-4">
+      <img src="assets/img/person/ryan.jpg" class="img-fluid rounded" alt="Ryan Laird" style="max-width: 300px;">
+    </div>
+
+    <!-- Content Section -->
+    <div class="team-info flex-grow-1 d-flex flex-column justify-content-between">
+      
+      <div>
+        <h4 class="mb-1">Ryan Laird</h4>
+        <span class="d-block mb-3">Founder, Green Orbit Academy</span>
+        <p class="mb-3">
+          Ryan leads the Academy within the Impact Orbit Creative Group, shaping its vision for capability-building across the global impact and sustainability landscape. His work focuses on developing practical learning pathways that empower organisations, startups, and mission-driven teams to adopt robust impact frameworks, improve measurement practices, and integrate responsible innovation into everyday operations.
+        </p>
+        <p class="mb-3">
+          With a background spanning sustainable marketing, space-sector strategy, and ecosystem development, Ryan designs Academy programmes that blend industry expertise with accessible learning formats—helping participants translate complex concepts into actionable skills. Through his leadership, the Academy serves as a hub for knowledge, training, and professional development and wider community outreach initiatives.
+        </p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social mt-2">
+        <a href="https://x.com/rjmlaird" class="me-2"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://facebook.com/rjmlaird" class="me-2"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/rjmlaird" class="me-2"><i class="bi bi-instagram"></i></a>
+        <a href="https://linkedin.com/in/rjmlaird87"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
         </div>
 
       </div>
 
     </section><!-- /Trainers Index Section -->
+<div class="cta-box section-title" data-aos="fade-up">
+  <h2>Get in touch</h2>
+  <p>
+    Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
+  </p>
+  <a href="contact.html" class="btn-getstarted"><strong>Contact Us</strong></a>
+</div>
 
   </main>
 
@@ -479,11 +527,11 @@ Through our workshops, courses, and learning pathways, we help you develop the s
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="terms.html">Terms of service</a></li>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+            <li><a href="cookie-policy.html">Cookie policy</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
           </ul>
         </div>
 

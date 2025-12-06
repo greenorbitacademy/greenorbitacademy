@@ -19,36 +19,36 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #13183e; /* Color for headings, subheadings and title throughout the website */
+  --background-color: #13183e; /* Background color for the entire website, including individual sections */
+  --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #47b05b; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --surface-color: #47b05b; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #272828;  /* The default color of the main navmenu links */
-  --nav-hover-color: #5fcf80; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
+  --nav-hover-color: #47b05b; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #272828; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #5fcf80; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #13183e; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #47b05b; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #13183e;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #060606;
+  --background-color: #13183e;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #13183e;
   --contrast-color: #ffffff;
 }
 
@@ -261,7 +261,7 @@ h6 {
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: color-mix(in srgb, var(--accent-color), transparent 100%);
 }
 
 @media (max-width: 1200px) {
@@ -833,17 +833,13 @@ section,
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
-.section-title {
-  padding-bottom: 60px;
-  position: relative;
-}
 
+/* Section Titles H2 */
 .section-title h2 {
   font-size: 14px;
   font-weight: 500;
-  padding: 0;
-  line-height: 1px;
-  margin: 0;
+  line-height: 1;
+  margin: 0 0 20px 0;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
@@ -859,13 +855,15 @@ section,
   margin: 4px 10px;
 }
 
+/* Main Text Paragraphs */
 .section-title p {
-  color: var(--heading-color);
-  margin: 0;
-  font-size: 36px;
-  font-weight: 700;
-  font-family: var(--nav-font);
-  text-transform: uppercase;
+  color: var(--default-color);
+  font-family: var(--default-font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-transform: none;
+  margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -1023,7 +1021,7 @@ section,
 }
 
 .counts .stats-item p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, var(--accent-color), transparent 40%);
   padding: 0;
   margin: 0;
   font-family: var(--heading-font);
@@ -1053,11 +1051,11 @@ section,
 
 .why-us .why-box .more-btn {
   display: inline-block;
-  background: color-mix(in srgb, var(--contrast-color), transparent 85%);
+  background: color-mix(in srgb, var(--surface-color), transparent 0%);
   padding: 8px 40px 10px 40px;
-  color: var(--contrast-color);
+  color: var(--default-color);
   transition: all ease-in-out 0.4s;
-  border-radius: 50px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .why-us .why-box .more-btn i {
@@ -1065,8 +1063,8 @@ section,
 }
 
 .why-us .why-box .more-btn:hover {
-  color: var(--accent-color);
-  background: var(--surface-color);
+  color: var(--surface-color);
+  background: var(--default-color);
 }
 
 .why-us .icon-box {
@@ -1075,14 +1073,14 @@ section,
   padding: 40px 30px;
   width: 100%;
   height: 100%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .why-us .icon-box i {
-  color: var(--accent-color);
+  color: var(--default-color);
   font-size: 32px;
   margin-bottom: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background: color-mix(in srgb, var(--surface-color), transparent 0%);
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -1100,12 +1098,12 @@ section,
 
 .why-us .icon-box p {
   font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .why-us .icon-box:hover i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: var(--surface-color);
+  background: var(--default-color);
 }
 
 /*--------------------------------------------------------------
@@ -1149,7 +1147,7 @@ section,
 }
 
 .features .features-item:hover h3 a {
-  color: var(--accent-color);
+  color: var(--background-color);
 }
 
 /*--------------------------------------------------------------
@@ -1176,7 +1174,7 @@ section,
 }
 
 .courses .course-content h3 a:hover {
-  color: var(--accent-color);
+  color: var(--background-color);
 }
 
 .courses .course-content .category {
@@ -1192,12 +1190,12 @@ section,
   margin: 0;
   font-weight: 700;
   font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .courses .course-content .description {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .courses .trainer {
@@ -1214,17 +1212,17 @@ section,
   padding-left: 10px;
   font-weight: 600;
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   transition: 0.3s;
 }
 
 .courses .trainer .trainer-profile .trainer-link:hover {
-  color: var(--accent-color);
+  color: var(--background-color);
 }
 
 .courses .trainer .trainer-rank {
   font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .courses .trainer .trainer-rank .user-icon {
@@ -1259,14 +1257,14 @@ section,
   font-style: italic;
   display: block;
   font-size: 13px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .trainers-index .member p {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
 }
 
 .trainers-index .member .social {
@@ -1274,7 +1272,7 @@ section,
 }
 
 .trainers-index .member .social a {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   transition: 0.3s;
 }
 
@@ -1290,28 +1288,28 @@ section,
 /*--------------------------------------------------------------
 # About Us Section
 --------------------------------------------------------------*/
+.about-us .content p {
+  color: var(--default-color);
+  font-family: var(--default-font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6; /* slightly more spacing for readability */
+  text-transform: none;
+  margin-bottom: 1.5em; /* increased spacing between paragraphs */
+}
+
+.about-us .content h2 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-bottom: 1em;
+}
+
 .about-us .content h3 {
   font-size: 2rem;
   font-weight: 700;
-}
-
-.about-us .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about-us .content ul li {
-  padding-bottom: 10px;
-}
-
-.about-us .content ul i {
-  font-size: 1.25rem;
-  margin-right: 4px;
-  color: var(--accent-color);
-}
-
-.about-us .content p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 
 /*--------------------------------------------------------------
@@ -1991,6 +1989,36 @@ section,
   opacity: 1;
 }
 
+.cta-box {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-left: 6px solid var(--accent-color);
+  padding: 30px 35px;
+  border-radius: 12px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Increase spacing under paragraph */
+.cta-box p {
+  margin-bottom: 20px;
+}
+
+/* CTA button */
+.cta-box .btn-getstarted {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.cta-box .btn-getstarted:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 15%);
+}
 /*--------------------------------------------------------------
 # Events Section
 --------------------------------------------------------------*/
