@@ -1,0 +1,139 @@
+{
+  "$ref": "#/definitions/campaigns",
+  "definitions": {
+    "campaigns": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 4
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300,
+          "default": ""
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 300,
+          "default": ""
+        },
+        "pubdate": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string",
+          "default": ""
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "for space",
+            "from space",
+            "in space",
+            "e-commerce",
+            "SaaS",
+            "Healthcare"
+          ]
+        },
+        "url": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "type": "string",
+                  "format": "uri"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notion_page_id": {
+          "type": "string",
+          "default": ""
+        },
+        "exported_at": {
+          "type": "string",
+          "default": ""
+        },
+        "featuredImage": {
+          "type": "string",
+          "pattern": "^(https?:\\/\\/|\\/)",
+          "errorMessage": {
+            "pattern": "featuredImage must be a full URL or start with /"
+          },
+          "default": "/images/default-featured.jpg"
+        },
+        "seoTitle": {
+          "type": "string",
+          "maxLength": 70,
+          "default": ""
+        },
+        "seoDescription": {
+          "type": "string",
+          "maxLength": 160,
+          "default": ""
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "sustainableFocus": {
+          "type": "string",
+          "enum": [
+            "energy",
+            "emissions",
+            "materials",
+            "space-debris",
+            "education",
+            "policy"
+          ]
+        },
+        "pledges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "organisations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "SDGs": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "default": []
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

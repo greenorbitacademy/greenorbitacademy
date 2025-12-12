@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import TeamsList from '../../components/TeamsList.jsx';
+import { getCollection } from 'astro:content';
+
+// Fetch all team members (authors)
+let authors = await getCollection('team');
+
+// Sort alphabetically by title
+authors.sort((a, b) => (a.data.title || '').localeCompare(b.data.title || ''));
+---
+
+<Layout title="Our Authors" description="Meet the thought leaders and content creators shaping sustainable marketing for the space sector at Green Orbit Digital.">
+
+  <main class="py-12 max-w-6xl mx-auto px-4">
+    <Hero
+      title="Our Authors" 
+      description="Explore the expertise, insights, and passions of the authors who contribute to Green Orbit Digital’s knowledge base." 
+    />
+
+    <!-- Authors Grid -->
+    <section class="my-12">
+      <TeamsList teamMembers={authors} showLinks={true} />
+    </section>
+
+    <!-- About Our Authors -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold mb-4">About Our Authors</h2>
+      <p class="text-gray-200 max-w-3xl leading-relaxed">
+        Our authors are experts in sustainable marketing, space industry communications, and digital strategy. Each author brings unique insights, practical experience, and a passion for driving measurable impact while supporting responsible growth in the space sector.
+      </p>
+    </section>
+
+    <!-- Author Values & Approach -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold mb-4">Our Approach</h2>
+      <ul class="list-disc list-inside text-gray-200 max-w-3xl space-y-2">
+        <li>Sharing actionable knowledge and expertise in sustainable marketing for space-focused organisations</li>
+        <li>Fostering transparency and trust through clear, data-driven insights</li>
+        <li>Promoting innovation and creativity in content strategy and storytelling</li>
+        <li>Collaborating with clients and peers to drive responsible growth</li>
+        <li>Encouraging continuous learning and thought leadership in the space community</li>
+      </ul>
+    </section>
+  </main>
+    <!-- Full-Width CTA -->
+    <section class="w-full bg-secondary-500 py-16 text-white text-center">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to collaborate?</h2>
+        <p class="mb-8 text-lg sm:text-xl text-gray-200">Let’s drive responsible growth for your organisation. Get in touch for a custom package or exploratory call.</p>
+        <a href="/contact" class="inline-block w-full sm:w-auto px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-lg transition text-lg sm:text-xl">Contact Us</a>
+      </div>
+    </section>
+</Layout>

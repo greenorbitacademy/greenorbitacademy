@@ -1,0 +1,59 @@
+{
+  "impactAreas": [
+    {
+      "id": "governance",
+      "name": "Governance",
+      "maxPoints": 20,
+      "questions": [
+        { "id": "mission_statement", "text": "Do you have a written mission referencing social or environmental goals?", "maxPoints": 5 },
+        { "id": "board_review", "text": "Does the board regularly review ESG KPIs and non-financial metrics?", "maxPoints": 5 },
+        { "id": "transparency_reporting", "text": "Do you publish an annual impact or sustainability report?", "maxPoints": 5 },
+        { "id": "conflict_policy", "text": "Are there policies to prevent conflicts of interest among leadership?", "maxPoints": 5 }
+      ]
+    },
+    {
+      "id": "workers",
+      "name": "Workers",
+      "maxPoints": 30,
+      "questions": [
+        { "id": "training_hours", "text": "Average training hours per employee per year", "maxPoints": 5 },
+        { "id": "benefits", "text": "Fair compensation, benefits, and paid leave provided?", "maxPoints": 5 },
+        { "id": "worker_feedback", "text": "Formal process for worker feedback and grievance resolution?", "maxPoints": 5 },
+        { "id": "safety_training", "text": "Access to health and safety training?", "maxPoints": 5 },
+        { "id": "flexibility_inclusion", "text": "Flexible working arrangements or accommodations offered?", "maxPoints": 5 },
+        { "id": "employee_ownership", "text": "Employee ownership, profit sharing, or representation?", "maxPoints": 5 }
+      ]
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "maxPoints": 25,
+      "questions": [
+        { "id": "local_hiring", "text": "Prioritize local hiring or diversity in recruitment?", "maxPoints": 5 },
+        { "id": "supplier_diversity", "text": "Use diverse or local suppliers?", "maxPoints": 5 },
+        { "id": "community_investment", "text": "Contribute to charitable donations or community initiatives?", "maxPoints": 5 },
+        { "id": "supply_chain_fairness", "text": "Are suppliers treated fairly and ethically?", "maxPoints": 5 },
+        { "id": "community_engagement", "text": "Ongoing initiatives benefiting local communities?", "maxPoints": 5 }
+      ]
+    },
+    {
+      "id": "environment",
+      "name": "Environment",
+      "maxPoints": 15,
+      "questions": [
+        { "id": "energy_tracking", "text": "Track energy consumption and emissions?", "maxPoints": 5 },
+        { "id": "emission_reduction", "text": "Targets in place to reduce environmental impacts?", "maxPoints": 5 },
+        { "id": "sustainable_products", "text": "Products/services incorporate sustainability?", "maxPoints": 5 }
+      ]
+    },
+    {
+      "id": "customers",
+      "name": "Customers",
+      "maxPoints": 10,
+      "questions": [
+        { "id": "customer_feedback", "text": "Measure customer outcomes related to social/environmental impact?", "maxPoints": 5 },
+        { "id": "data_privacy", "text": "Privacy, accessibility, and responsible marketing practices implemented?", "maxPoints": 5 }
+      ]
+    }
+  ]
+}

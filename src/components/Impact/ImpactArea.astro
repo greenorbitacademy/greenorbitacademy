@@ -1,0 +1,35 @@
+---
+const { area, scores } = Astro.props;
+
+// Calculate total points for this area
+const areaTotal = scores.reduce((sum, q) => sum + q.achievedPoints, 0);
+const areaPercent = ((areaTotal / area.maxPoints) * 100).toFixed(1);
+---
+
+<div class="space-y-4">
+
+  <!-- Area header -->
+  <div class="flex items-center justify-between cursor-pointer"
+       x-data="{ open: false }"
+       @click="open = !open"
+  >
+    <h2 class="text-2xl font-bold">{area.name}</h2>
+    <span class="text-lg font-semibold">{areaTotal}/{area.maxPoints} ({areaPercent}%)</span>
+  </div>
+
+  <!-- Collapsible question details -->
+  <div x-show="open" x-transition class="mt-4 space-y-3">
+    {scores.map((q) => (
+      <div key={q.questionId} class="bg-white dark:bg-gray-700 rounded-lg p-4 shadow-sm space-y-1">
+        <p class="font-medium">{q.text} – <span class="font-semibold">{q.achievedPoints}/{q.maxPoints}</span></p>
+        {q.evidence && (
+          <p class="text-sm text-gray-600 dark:text-gray-300"><strong>Evidence:</strong> {q.evidence}</p>
+        )}
+        {q.responsible && (
+          <p class="text-sm text-gray-600 dark:text-gray-300"><strong>Responsible:</strong> {q.responsible}</p>
+        )}
+      </div>
+    ))}
+  </div>
+
+</div>

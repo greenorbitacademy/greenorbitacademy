@@ -1,0 +1,79 @@
+---
+/* No props yet, but frontmatter must exist */
+---
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a href="/" class="logo d-flex align-items-center me-auto">
+      <h1 class="sitename m-0">Green Orbit Academy</h1>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+
+        <li class="dropdown">
+          <a href="/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="/trainers">Trainers</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/webinars">Webinars</a></li>
+
+        <li class="dropdown">
+          <a href="#"><span>CPD</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/workshops">Workshops</a></li>
+            <li><a href="/masterclasses">Masterclasses</a></li>
+            <li><a href="/programmes">Training Programmes</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Mobile toggle button -->
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+    <!-- Contact button -->
+    <a class="btn-getstarted" href="/contact"><strong>CONTACT US</strong></a>
+
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.getElementById('navmenu');
+
+  mobileToggle.addEventListener('click', () => {
+    navmenu.classList.toggle('navbar-mobile');
+    mobileToggle.classList.toggle('bi-list');
+    mobileToggle.classList.toggle('bi-x');
+  });
+
+  // Dropdown toggle for mobile
+  document.querySelectorAll('.navmenu .dropdown > a').forEach(el => {
+    el.addEventListener('click', function (e) {
+      if (navmenu.classList.contains('navbar-mobile')) {
+        e.preventDefault();
+        this.nextElementSibling.classList.toggle('dropdown-active');
+      }
+    });
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('#navmenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navmenu.classList.contains('navbar-mobile')) {
+        navmenu.classList.remove('navbar-mobile');
+        mobileToggle.classList.add('bi-list');
+        mobileToggle.classList.remove('bi-x');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,50 @@
+{
+  "year": 2025,
+  "impactAreas": [
+    {
+      "id": "governance",
+      "scores": [
+        { "questionId": "mission_statement", "achievedPoints": 5, "evidence": "Public mission statement on website", "responsible": "CEO" },
+        { "questionId": "board_review", "achievedPoints": 4, "evidence": "Quarterly board minutes", "responsible": "Board Secretary" },
+        { "questionId": "transparency_reporting", "achievedPoints": 5, "evidence": "Report published online", "responsible": "Communications Team" },
+        { "questionId": "conflict_policy", "achievedPoints": 4, "evidence": "Code of conduct", "responsible": "Legal Team" }
+      ]
+    },
+    {
+      "id": "workers",
+      "scores": [
+        { "questionId": "training_hours", "achievedPoints": 4, "evidence": "HR training logs", "responsible": "HR Manager" },
+        { "questionId": "benefits", "achievedPoints": 5, "evidence": "Payroll and benefits data", "responsible": "HR Manager" },
+        { "questionId": "worker_feedback", "achievedPoints": 4, "evidence": "Annual employee survey", "responsible": "HR Manager" },
+        { "questionId": "safety_training", "achievedPoints": 5, "evidence": "Safety training logs", "responsible": "Operations Manager" },
+        { "questionId": "flexibility_inclusion", "achievedPoints": 4, "evidence": "Hybrid working records", "responsible": "HR Manager" },
+        { "questionId": "employee_ownership", "achievedPoints": 3, "evidence": "Employee stock option scheme", "responsible": "Finance Team" }
+      ]
+    },
+    {
+      "id": "community",
+      "scores": [
+        { "questionId": "local_hiring", "achievedPoints": 4, "evidence": "HR data", "responsible": "HR Manager" },
+        { "questionId": "supplier_diversity", "achievedPoints": 4, "evidence": "Procurement data", "responsible": "Procurement Team" },
+        { "questionId": "community_investment", "achievedPoints": 5, "evidence": "Charitable contributions report", "responsible": "CSR Team" },
+        { "questionId": "supply_chain_fairness", "achievedPoints": 4, "evidence": "Supplier audits", "responsible": "Procurement Team" },
+        { "questionId": "community_engagement", "achievedPoints": 4, "evidence": "Volunteer hours logs", "responsible": "CSR Team" }
+      ]
+    },
+    {
+      "id": "environment",
+      "scores": [
+        { "questionId": "energy_tracking", "achievedPoints": 4, "evidence": "Energy invoices", "responsible": "Operations Manager" },
+        { "questionId": "emission_reduction", "achievedPoints": 4, "evidence": "Emission reports", "responsible": "Sustainability Officer" },
+        { "questionId": "sustainable_products", "achievedPoints": 4, "evidence": "Product lifecycle analysis", "responsible": "Product Team" }
+      ]
+    },
+    {
+      "id": "customers",
+      "scores": [
+        { "questionId": "customer_feedback", "achievedPoints": 4, "evidence": "Customer surveys", "responsible": "Customer Success Team" },
+        { "questionId": "data_privacy", "achievedPoints": 5, "evidence": "Privacy and accessibility audits", "responsible": "Product & Legal Teams" }
+      ]
+    }
+  ]
+}

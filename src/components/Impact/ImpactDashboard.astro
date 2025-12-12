@@ -1,0 +1,47 @@
+---
+import questionsData from '../../data/impact/questions.json';
+import yearlyData from '../../data/impact/yearly_2025.json';
+import ImpactArea from './ImpactArea.astro';
+
+// Calculate total max points
+const totalMaxPoints = questionsData.impactAreas.reduce(
+  (sum, area) => sum + area.maxPoints,
+  0
+);
+
+// Map area IDs to yearly scores
+const areaScores = yearlyData.impactAreas.reduce((acc, area) => {
+  const areaTotal = area.scores.reduce((sum, q) => sum + q.achievedPoints, 0);
+  acc[area.id] = { total: areaTotal, scores: area.scores };
+  return acc;
+}, {});
+
+// Calculate overall achieved points
+const overallAchieved = Object.values(areaScores).reduce(
+  (sum, a) => sum + a.total,
+  0
+);
+const overallPercent = ((overallAchieved / totalMaxPoints) * 100).toFixed(1);
+---
+<section class="impact-dashboard max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 text-gray-700 dark:text-white">
+
+  <!-- Page header -->
+  <header class="text-center space-y-2">
+    <h1 class="text-4xl font-bold">Impact Report – {yearlyData.year}</h1>
+    <p class="text-lg">Overall Score: <span class="font-semibold">{overallAchieved}/{totalMaxPoints}</span> ({overallPercent}%)</p>
+  </header>
+
+  <!-- Areas -->
+  {questionsData.impactAreas.map((area) => (
+    <section 
+      key={area.id} 
+      class="impact-area bg-gray-50 dark:bg-primary-500 rounded-xl p-6 shadow-md space-y-4"
+    >
+      <ImpactArea 
+        area={area} 
+        scores={areaScores[area.id]?.scores || []} 
+      />
+    </section>
+  ))}
+
+</section>

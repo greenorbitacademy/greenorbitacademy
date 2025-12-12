@@ -1,0 +1,59 @@
+---
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
+const { area, yearlyDataArray } = Astro.props;
+
+// Prepare chart labels (years) and dataset (achieved points per year)
+const labels = yearlyDataArray.map(y => y.year);
+const data = yearlyDataArray.map(y => {
+  const areaData = y.impactAreas.find(a => a.id === area.id);
+  return areaData?.scores.reduce((sum, q) => sum + q.achievedPoints, 0) || 0;
+});
+const maxPoints = area.maxPoints;
+---
+
+<div class="impact-chart">
+  <h3>{area.name} – Yearly Trend</h3>
+  <canvas id={`chart-${area.id}`} width="400" height="150"></canvas>
+</div>
+
+<script type="module">
+  import { Chart } from 'chart.js';
+
+  const ctx = document.getElementById("chart-{{area.id}}").getContext("2d");
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: {{JSON.stringify(labels)}},
+      datasets: [
+        {
+          label: 'Achieved Points',
+          data: {{JSON.stringify(data)}},
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Max Points',
+          data: Array({{labels.length}}).fill({{maxPoints}}),
+          type: 'line',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 2,
+          fill: false,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true, max: {{maxPoints}} }
+      },
+      plugins: {
+        tooltip: { mode: 'index', intersect: false }
+      }
+    }
+  });
+</script>

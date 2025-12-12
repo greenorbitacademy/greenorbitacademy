@@ -1,0 +1,143 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import InsightsList from '../../components/InsightsList.jsx';
+import SocialLinks from '../../components/SocialLinks.astro';
+import { getCollection } from 'astro:content';
+import crypto from 'crypto';
+import slugify from 'slugify';
+
+// 1️⃣ Generate static paths for all team members
+export async function getStaticPaths() {
+  const team = await getCollection('team');
+  return team.map(member => ({
+    params: { author: slugify(member.data.title || member.data.slug || '', { lower: true }) },
+  }));
+}
+
+// 2️⃣ Extract author slug from URL params
+const { author } = Astro.params;
+
+// 3️⃣ Fetch team member info
+const teamMembers = await getCollection('team');
+const member = teamMembers.find(
+  m => slugify(m.data.title || m.data.slug || '', { lower: true }) === author.toLowerCase()
+);
+if (!member) throw new Error(`Author not found: ${author}`);
+const authorData = member.data;
+
+// 4️⃣ Avatar fallback
+const gravatarUrl = authorData.contactEmail
+  ? `https://www.gravatar.com/avatar/${crypto
+      .createHash('md5')
+      .update(authorData.contactEmail.trim().toLowerCase())
+      .digest('hex')}?s=160&d=identicon`
+  : authorData.image || '/images/default-author.png';
+
+// 5️⃣ Collect posts from multiple collections
+const collections = ['blog', 'news', 'resources'];
+let allPosts: any[] = [];
+
+for (const c of collections) {
+  try {
+    const posts = await getCollection(c);
+    allPosts.push(...posts);
+  } catch (err) {
+    console.warn(`Collection ${c} could not be loaded:`, err);
+  }
+}
+
+// 6️⃣ Filter posts by author (handle string, object, reference)
+const normalisedAuthor = slugify(authorData.title, { lower: true });
+const authorPosts = allPosts.filter(post => {
+  if (!post.data.author) return false;
+
+  const authors = Array.isArray(post.data.author) ? post.data.author : [post.data.author];
+
+  return authors.some(a => {
+    // String author
+    if (typeof a === 'string') return slugify(a, { lower: true }) === normalisedAuthor;
+
+    // Object or reference
+    if (typeof a === 'object') {
+      // Astro content reference to team member
+      if (a.id && a.collection === 'team') return a.id === member.id;
+
+      // Inline object with title
+      if (a.title) return slugify(a.title, { lower: true }) === normalisedAuthor;
+
+      // Inline object with slug
+      if (a.slug) return slugify(a.slug, { lower: true }) === slugify(authorData.slug || authorData.title, { lower: true });
+    }
+
+    return false;
+  });
+});
+
+// 7️⃣ Sort posts descending by pubdate
+authorPosts.sort((a, b) => new Date(b.data.pubdate ?? 0).getTime() - new Date(a.data.pubdate ?? 0).getTime());
+
+// 8️⃣ Prepare social links
+const socials = Object.entries(authorData.socialLinks || {})
+  .filter(([_, url]) => url)
+  .map(([name, url]) => ({ name, url }));
+
+// ✅ Assign allInsights
+const allInsights = authorPosts;
+---
+
+<Layout
+  title={`Insights by ${authorData.title}`}
+  description={`All articles, news, and resources by ${authorData.title}`}
+>
+  <!-- Hero + Profile -->
+  <main class="py-10 max-w-6xl mx-auto px-4">
+    <Hero
+      title={`Insights by ${authorData.title}`}
+      description="Explore all articles, news, and resources from our team."
+    />
+
+    <section class="flex flex-col sm:flex-row sm:items-center sm:space-x-6 my-8">
+      <img
+        src={gravatarUrl}
+        alt={authorData.title}
+        class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-gray-300 mb-4 sm:mb-0 object-cover"
+      />
+      <div>
+        <h1 class="text-3xl font-bold text-accent-500">{authorData.title}</h1>
+        {authorData.jobTitle && <p class="text-white">{authorData.jobTitle}</p>}
+        {authorData.description && (
+          <p class="mt-2 max-w-2xl text-gray-200 leading-relaxed">
+            {authorData.description}
+          </p>
+        )}
+        {socials.length > 0 && (
+          <div class="flex flex-wrap gap-4 mt-4">
+            <SocialLinks socials={socials} size="w-6 h-6" />
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <!-- Full-width Insights List -->
+  <section class="mt-16 w-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28">
+    <h2 class="text-2xl font-semibold mb-6 text-accent-500 text-center">
+      All Posts by {authorData.title}
+    </h2>
+
+    {allInsights.length > 0 ? (
+      <InsightsList client:load posts={allInsights} />
+    ) : (
+      <p class="text-gray-300 italic text-center">No posts found for this author.</p>
+    )}
+  </section>
+    <!-- Full-Width CTA -->
+    <section class="w-full bg-secondary-500 py-16 text-white text-center">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to collaborate?</h2>
+        <p class="mb-8 text-lg sm:text-xl text-gray-200">Let’s drive responsible growth for your organisation. Get in touch for a custom package or exploratory call.</p>
+        <a href="/contact" class="inline-block w-full sm:w-auto px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-lg transition text-lg sm:text-xl">Contact Us</a>
+      </div>
+    </section>
+</Layout>

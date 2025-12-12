@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<Layout title="Accessibility Policy">
+
+  <main class="py-8 scroll-smooth">
+    <HeroSection 
+      title="Accessibility Policy" 
+      description="Our commitment to ensuring accessible digital experiences for everyone."
+    />
+
+    <section class="py-16 bg-white dark:bg-secondary-500">
+      <div class="max-w-6xl mx-auto px-4 prose prose-lg dark:prose-invert">
+
+        <!-- Table of Contents -->
+        <nav class="mb-12 border-l-4 border-primary-500 pl-4">
+          <h2 class="text-xl font-semibold mb-2">On this page</h2>
+          <ul class="space-y-2">
+            <li><a href="#purpose-and-scope" class="text-primary-600 hover:underline">Purpose and Scope</a></li>
+            <li><a href="#policy-statement" class="text-primary-600 hover:underline">Policy Statement</a></li>
+            <li><a href="#core-principles" class="text-primary-600 hover:underline">Core Principles</a></li>
+            <li><a href="#technical-requirements" class="text-primary-600 hover:underline">Technical Requirements</a></li>
+            <li><a href="#content-standards" class="text-primary-600 hover:underline">Content Standards</a></li>
+            <li><a href="#testing-and-monitoring" class="text-primary-600 hover:underline">Testing and Monitoring</a></li>
+            <li><a href="#support-and-feedback" class="text-primary-600 hover:underline">Support and Feedback</a></li>
+            <li><a href="#continuous-improvement" class="text-primary-600 hover:underline">Continuous Improvement</a></li>
+            <li><a href="#compliance" class="text-primary-600 hover:underline">Compliance</a></li>
+          </ul>
+        </nav>
+
+        <!-- Policy Content -->
+        <h3 id="purpose-and-scope">Purpose and Scope</h3>
+        <p>
+          Green Orbit Academy is committed to ensuring digital accessibility for all users across our platforms, products, 
+          and services. This policy establishes our framework for creating, maintaining, and improving accessible digital experiences.
+        </p>
+
+        <h3 id="policy-statement">Policy Statement</h3>
+        <p>
+          We strive to ensure that all digital content and services are accessible to people with disabilities, following 
+          the Web Content Accessibility Guidelines (WCAG) 2.1 AA standards.
+        </p>
+
+        <h3 id="core-principles">Core Principles</h3>
+        <ul>
+          <li><strong>Perceivable:</strong> Information and user interface components must be presentable to users in ways they can perceive.</li>
+          <li><strong>Operable:</strong> User interface components and navigation must be operable.</li>
+          <li><strong>Understandable:</strong> Information and operation of user interface must be understandable.</li>
+          <li><strong>Robust:</strong> Content must be robust enough to be interpreted reliably by a wide variety of user agents.</li>
+        </ul>
+
+        <h3 id="technical-requirements">Technical Requirements</h3>
+        <h4>Website Accessibility</h4>
+        <ul>
+          <li>All websites must be navigable via keyboard</li>
+          <li>Content must be readable when zoomed up to 300%</li>
+          <li>All images must include meaningful alternative text</li>
+          <li>Videos must include captions and audio descriptions</li>
+          <li>Color contrast must meet WCAG 2.1 AA standards</li>
+          <li>Forms must include proper labels and error handling</li>
+        </ul>
+
+        <h3 id="content-standards">Content Standards</h3>
+        <ul>
+          <li>Use clear, simple language</li>
+          <li>Provide consistent navigation</li>
+          <li>Ensure proper heading structure</li>
+          <li>Include descriptive link text</li>
+          <li>Provide transcripts for audio content</li>
+        </ul>
+
+        <h3 id="testing-and-monitoring">Testing and Monitoring</h3>
+        <p>We conduct regular accessibility testing using:</p>
+        <ul>
+          <li>Automated testing tools</li>
+          <li>Manual testing by trained staff</li>
+          <li>User testing with assistive technologies</li>
+          <li>Third-party accessibility audits</li>
+        </ul>
+
+        <h3 id="support-and-feedback">Support and Feedback</h3>
+        <p>
+          Users who experience accessibility issues or require alternative formats can contact us at:
+        </p>
+        <p><strong>Email:</strong> hello@greenorbit.space</p>
+        <p><strong>Phone:</strong> +44 7599423050</p>
+        <p>We aim to respond to accessibility requests within 5 working days.</p>
+
+        <h3 id="continuous-improvement">Continuous Improvement</h3>
+        <p>We are committed to:</p>
+        <ul>
+          <li>Regular review and updates of this policy</li>
+          <li>Ongoing staff training in accessibility</li>
+          <li>Implementation of emerging accessibility technologies</li>
+          <li>Regular consultation with users with disabilities</li>
+        </ul>
+
+        <h3 id="compliance">Compliance</h3>
+        <p>This policy aligns with:</p>
+        <ul>
+          <li>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</li>
+          <li>Relevant disability discrimination legislation</li>
+          <li>Industry best practices for digital accessibility</li>
+        </ul>
+
+        <aside class="mt-12 p-4 border-t border-gray-300 dark:border-gray-600 text-sm">
+          <p><strong>Green Orbit Digital Ltd</strong><br/>
+          86-90 Paul Street, London EC2A 4NE<br/>
+          Company number: 15207389 registered in England and Wales<br/>
+          VAT number: GB462243312</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import EventsList from "../../components/EventFilters.jsx";
+
+let preRenderedEvents = [];
+
+try {
+  const eventsImport = await import("../../data/events.json");
+  preRenderedEvents = Array.isArray(eventsImport.default) ? eventsImport.default : [];
+} catch (err) {
+  console.warn("Failed to load events.json:", err);
+  preRenderedEvents = [];
+}
+---
+
+<Layout title="Upcoming Events">
+
+  <main class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Hero
+      title="Upcoming Events"
+      description="Discover all space, sustainability, and marketing events in our orbit"
+    />
+
+    <!-- Pass a guaranteed array -->
+    <EventsList preRenderedEvents={preRenderedEvents} client:load />
+  </main>
+
+</Layout>

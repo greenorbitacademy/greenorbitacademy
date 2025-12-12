@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import EventsList from '../../components/EventFilters.jsx';
+
+import attendingList from '../../data/eventsAttending.json';
+import eventsData from '../../data/events.json';
+
+// Filter events by slug
+import slugify from '../../utils/slugify.js';
+const attendingSlugs = attendingList.map(slugify);
+const attendingEvents = eventsData
+  .filter(event => attendingSlugs.includes(slugify(event.title)))
+  .sort((a, b) => new Date(a.start || 0) - new Date(b.start || 0));
+---
+
+<Layout title="Meet Us at Events" description="See the events where you can meet the Green Orbit team. Let us know if you are coming and book a time to connect.">
+  <main class="py-12">
+
+    <!-- Hero Section -->
+    <HeroSection
+      title="Meet the Green Orbit Team"
+      description="We’re planning to attend the following upcoming space and sustainability events. Let us know you’re coming and book a time to meet us!"
+      ctaText="Let Us Know You're Coming"
+      ctaHref="/contact#book-us"
+    />
+
+    <!-- Full-width Intro Block -->
+    <section class="w-full py-12 bg-secondary-500 dark:bg-secondary-500 mt-12">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-accent-500 text-secondary-600 dark:text-white font-medium text-sm mb-4">
+          Staying Connected
+        </span>
+        <p class="text-white mb-4">
+          We attend key events to stay engaged with the latest developments and connect with innovators across the space and sustainability sectors.
+        </p>
+      </div>
+    </section>
+
+    <!-- Attending Events List (flat cards) -->
+    <section class="mt-12 max-w-6xl mx-auto px-4">
+      <EventsList 
+        preRenderedEvents={attendingEvents} 
+        flatList={true} 
+        client:load 
+      />
+    </section>
+
+    <!-- Secondary CTA -->
+    <section class="mt-16 bg-secondary-500 rounded-lg p-8 text-center max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl text-white font-bold mb-4">Book a Meeting with Us</h2>
+      <p class="mb-6 text-white">
+        We’d love to connect at any of these events. Let us know you’re attending and schedule a time to talk with our team.
+      </p>
+      <a href="/contact#book-us" class="inline-block px-6 py-3 bg-accent-500 text-white font-semibold rounded hover:bg-primary-600 transition">
+        Book a Meeting
+      </a>
+    </section>
+
+  </main>
+
+</Layout>

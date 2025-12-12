@@ -1,0 +1,64 @@
+{
+  "$ref": "#/definitions/space-applications",
+  "definitions": {
+    "space-applications": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 5
+        },
+        "markets": {
+          "type": "string",
+          "default": ""
+        },
+        "description": {
+          "type": "string",
+          "default": ""
+        },
+        "domains": {
+          "type": "string",
+          "default": ""
+        },
+        "copernicus": {
+          "type": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "default": "No"
+        },
+        "EGNSS": {
+          "type": "string",
+          "enum": [
+            "Yes",
+            "No"
+          ],
+          "default": "No"
+        },
+        "SDGs": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "default": []
+        },
+        "slug": {
+          "type": "string"
+        },
+        "featuredImage": {
+          "type": "string",
+          "default": "/images/default-featured.jpg"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

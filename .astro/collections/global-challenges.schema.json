@@ -1,0 +1,136 @@
+{
+  "$ref": "#/definitions/global-challenges",
+  "definitions": {
+    "global-challenges": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 5
+        },
+        "slug": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "default": ""
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "featuredImage": {
+          "type": "string",
+          "default": "/images/default-featured.jpg"
+        },
+        "SDGs": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "default": []
+        },
+        "organisations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "paris_agreement": {
+          "type": "object",
+          "properties": {
+            "article": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "article",
+            "summary",
+            "link"
+          ],
+          "additionalProperties": false
+        },
+        "sendai_framework": {
+          "type": "object",
+          "properties": {
+            "references": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "summary": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "code",
+                  "summary",
+                  "link"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "references"
+          ],
+          "additionalProperties": false
+        },
+        "space2030": {
+          "type": "object",
+          "properties": {
+            "section": {
+              "type": "string"
+            },
+            "summary": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "section",
+            "summary",
+            "link"
+          ],
+          "additionalProperties": false
+        },
+        "seoTitle": {
+          "type": "string",
+          "maxLength": 70,
+          "default": ""
+        },
+        "seoDescription": {
+          "type": "string",
+          "maxLength": 160,
+          "default": ""
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

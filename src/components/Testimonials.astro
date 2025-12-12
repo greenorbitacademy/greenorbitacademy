@@ -1,0 +1,66 @@
+---
+import { onMount } from 'astro';
+import reviews from '@data/reviews.json';
+---
+
+<!-- Testimonials -->
+<div class="testimonial-section mt-5 pt-5" data-aos="fade-up" data-aos-delay="100">
+  <div class="row">
+
+    <div class="col-lg-4" data-aos="fade-right" data-aos-delay="200">
+      <div class="testimonial-intro">
+        <h3>What People Say</h3>
+        <p>
+          Colleagues and collaborators across the space, sustainability, and digital sectors share how our work together has shaped their progress.
+        </p>
+        <div class="swiper-nav-buttons mt-4">
+          <button class="slider-prev"><i class="bi bi-arrow-left"></i></button>
+          <button class="slider-next"><i class="bi bi-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8" data-aos="fade-left" data-aos-delay="300">
+      <div class="testimonial-slider swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 800,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": 1,
+            "spaceBetween": 30,
+            "navigation": {
+              "nextEl": ".slider-next",
+              "prevEl": ".slider-prev"
+            },
+            "breakpoints": {
+              "768": { "slidesPerView": 2 }
+            }
+          }
+        </script>
+
+        <div class="swiper-wrapper">
+          {reviews.map((review) => (
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p>"{review.content}"</p>
+                <div class="client-info d-flex align-items-center mt-4">
+                  <img src={review.avatar} class="client-img" alt={review.author} loading="lazy" />
+                  <div>
+                    <h6 class="mb-0">{review.author}</h6>
+                    <span>{review.position}{review.company ? `, ${review.company}` : ''}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

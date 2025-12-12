@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import TeamsList from '../../components/TeamsList.jsx';
+import ValueIcons from '../../components/ValueIcons.jsx';
+import { getCollection } from 'astro:content';
+
+// Fetch all team members
+let teamMembers = await getCollection('team');
+
+// Sort alphabetically by title
+teamMembers.sort((a, b) => (a.data.title || '').localeCompare(b.data.title || ''));
+---
+
+<Layout title="Meet Our Team" description="Discover the people driving sustainable marketing in the space sector at Green Orbit Digital.">
+
+  <main class="py-12 max-w-6xl mx-auto px-4">
+    <Hero 
+      title="Meet Our Team" 
+      description="Explore the expertise, passions, and motivations of the talented individuals behind Green Orbit Digital." 
+    />
+
+    <!-- About Our Team -->
+    <section class="mt-16">
+          <div class="container-custom text-center mb-12 dark:text-white ">
+            <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-accent-500 text-secondary-600 dark:text-white font-medium text-sm mb-4">
+          Our Team
+        </span>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">About Our Team</h2>
+        Our team brings together specialists in sustainable marketing, space industry innovation, digital strategy, and climate action. Each member is dedicated to helping companies achieve measurable impact while driving responsible growth. We combine deep industry expertise with creativity, passion for sustainability, and a commitment to meaningful outcomes.
+                  </div>
+        <!-- Team Members Grid -->
+      <TeamsList teamMembers={teamMembers} showLinks={true} />
+
+    </section>
+
+    <!-- Our Values -->
+    <section class="relative z-10 w-full">
+      <div class="container-custom text-center mb-12">
+        <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-accent-500 text-secondary-600 dark:text-white font-medium text-sm mb-4">
+          Our Values
+        </span>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">What Drives Us</h2>
+        <ValueIcons />
+              <a href="/about/our-values" class="btn-primary">Learn More</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Call to Action -->
+  <section class="w-full bg-secondary-500 py-16 text-white text-center">
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <h2 class="text-3xl sm:text-4xl font-bold">Ready to collaborate?</h2>
+      <p class="text-lg sm:text-xl text-white">
+        Let’s drive responsible growth for your organisation. Get in touch for a custom package or exploratory call.
+      </p>
+      <a href="/contact" class="inline-block w-full sm:w-auto px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-lg transition text-lg sm:text-xl">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>

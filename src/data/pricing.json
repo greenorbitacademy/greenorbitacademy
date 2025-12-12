@@ -1,0 +1,245 @@
+[
+  {
+    "product_name": "SEO & Website Carbon Footprint Audit",
+    "slug": "seo-website-carbon-footprint-audit",
+    "category": "Audits",
+    "product_id": "prod_SEOAudit123",
+    "product_tax_code": "txcd_20060055",
+    "marketing_features": [
+      "Technical SEO audit",
+      "Content performance analysis",
+      "Digital carbon footprint report",
+      "Actionable recommendations for sustainability"
+    ],
+    "description": "Comprehensive review combining technical SEO (site structure, indexing, crawlability), content optimisation for search visibility, and analysis of carbon footprint (hosting, page load, content delivery). Includes actionable recommendations for low-carbon content and eco-friendly hosting.",
+    "attributes": "Team Size: 1–2 analysts; Support: Email support included; Delivery Format: PDF & video walkthrough",
+    "statement_descriptor": "SEOCARBON",
+    "unit_label": "audit",
+    "created": "2025-07-09",
+    "updated": "2025-07-11",
+    "metadata": {
+      "category": "Audit",
+      "source": "Green Orbit Catalogue 2025",
+      "tier": "Standard"
+    },
+    "prices": [
+      {
+        "price_id": "price_1RkikxE9V0wpcpD5JdLeIerk",
+        "unit_amount": 75000,
+        "currency": "gbp",
+        "client_type": "SME",
+        "payment_link": "https://buy.stripe.com/test_prod_SEOAudit123",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Standard SME",
+        "description": "Full SEO & carbon footprint audit for small to medium enterprises"
+      },
+      {
+        "price_id": "price_1RkikxE9V0wpcpD5JdLeIerj",
+        "unit_amount": 150000,
+        "currency": "gbp",
+        "client_type": "Enterprise",
+        "payment_link": "https://buy.stripe.com/test_prod_SEOAudit456",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Enterprise",
+        "description": "Comprehensive audit for large enterprise websites, including extended recommendations"
+      }
+    ]
+  },
+  {
+    "product_name": "Brand & Messaging Sustainability Alignment",
+    "slug": "brand-messaging-sustainability-alignment",
+    "category": "Audits",
+    "product_id": "prod_BrandAudit123",
+    "product_tax_code": "txcd_20060055",
+    "marketing_features": [
+      "Brand messaging audit",
+      "Sustainability alignment review",
+      "Gap analysis for internal/external communication"
+    ],
+    "description": "Audit brand messaging against sustainability and ESG commitments. Includes alignment review with SDGs and sector expectations, and identification of internal/external messaging gaps. Ideal for companies rebranding or integrating sustainability into core messaging.",
+    "attributes": "Team Size: 1 analyst; Support: Email support; Delivery Format: PDF report",
+    "statement_descriptor": "BRANDALIGN",
+    "unit_label": "audit",
+    "created": "2025-07-09",
+    "updated": "2025-07-11",
+    "metadata": {
+      "category": "Audit",
+      "source": "Green Orbit Catalogue 2025",
+      "tier": "Standard"
+    },
+    "prices": [
+      {
+        "price_id": "price_1BrandAuditSME",
+        "unit_amount": 95000,
+        "currency": "gbp",
+        "client_type": "SME",
+        "payment_link": "https://buy.stripe.com/test_prod_BrandAudit123",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Standard SME",
+        "description": "Brand audit tailored for small to medium enterprises"
+      },
+      {
+        "price_id": "price_1BrandAuditEnt",
+        "unit_amount": 180000,
+        "currency": "gbp",
+        "client_type": "Enterprise",
+        "payment_link": "https://buy.stripe.com/test_prod_BrandAudit456",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Enterprise",
+        "description": "Enterprise-level brand and sustainability messaging review"
+      }
+    ]
+  },
+  {
+    "product_name": "Green Web Performance Audit",
+    "slug": "green-web-performance-audit",
+    "category": "Technical Services",
+    "product_id": "prod_Sf2lov9sLPCU4G",
+    "product_tax_code": "txcd_20060000",
+    "marketing_features": [
+      "Detailed Asset Analysis",
+      "Carbon Budgeting Guidance",
+      "Roadmap to A-grade",
+      "Third-Party Impact Quantified",
+      "Green Hosting + CDN",
+      "Policy Fit Recommendations",
+      "Comprehensive Audit Report",
+      "60-min review session"
+    ],
+    "description": "A full-spectrum digital sustainability audit for technical and strategic improvement to provide deeper insights for web teams, digital marketers, and ESG leads with measurable, prioritised, and tailored recommendations.",
+    "attributes": "Team Size: 2–3 analysts; Support: Priority email & call support; Delivery Format: PDF report & live workshop",
+    "statement_descriptor": "GREENPFMAUDIT",
+    "unit_label": "audit",
+    "created": "2025-07-11",
+    "updated": "2025-07-14",
+    "metadata": {
+      "category": "Audit",
+      "source": "Green Orbit Catalogue 2025",
+      "tier": "Standard"
+    },
+    "prices": [
+      {
+        "price_id": "price_GreenWebSME",
+        "unit_amount": 89500,
+        "currency": "gbp",
+        "client_type": "SME",
+        "payment_link": "https://buy.stripe.com/test_prod_GreenWebSME",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Standard SME",
+        "description": "Technical audit with actionable recommendations for SMEs"
+      },
+      {
+        "price_id": "price_GreenWebEnt",
+        "unit_amount": 160000,
+        "currency": "gbp",
+        "client_type": "Enterprise",
+        "payment_link": "https://buy.stripe.com/test_prod_GreenWebEnt",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Enterprise",
+        "description": "Comprehensive technical and sustainability audit for enterprise websites"
+      }
+    ]
+  },
+  {
+    "product_name": "Sustainability Strategy Workshop",
+    "slug": "sustainability-strategy-workshop",
+    "category": "Workshops",
+    "product_id": "prod_Workshop123",
+    "product_tax_code": "txcd_20060000",
+    "marketing_features": [
+      "Interactive strategy planning",
+      "Gap analysis for ESG integration",
+      "Team engagement & skill building",
+      "Actionable roadmap creation"
+    ],
+    "description": "Hands-on workshop designed to help teams integrate sustainability into business strategy, identify quick-win opportunities, and develop a clear roadmap aligned with SDGs and sector expectations.",
+    "attributes": "Duration: Half-day or Full-day; Max Participants: 12; Delivery Format: On-site or Virtual",
+    "statement_descriptor": "SUSTWORKSHOP",
+    "unit_label": "session",
+    "created": "2025-07-12",
+    "updated": "2025-07-12",
+    "metadata": {
+      "category": "Workshop",
+      "source": "Green Orbit Catalogue 2025",
+      "tier": "Standard"
+    },
+    "prices": [
+      {
+        "price_id": "price_WorkshopHalfDay",
+        "unit_amount": 45000,
+        "currency": "gbp",
+        "client_type": "SME",
+        "payment_link": "https://buy.stripe.com/test_prod_WorkshopHalfDay",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Half-day SME",
+        "description": "Half-day workshop for SMEs with actionable sustainability strategy"
+      },
+      {
+        "price_id": "price_WorkshopFullDay",
+        "unit_amount": 85000,
+        "currency": "gbp",
+        "client_type": "Enterprise",
+        "payment_link": "https://buy.stripe.com/test_prod_WorkshopFullDay",
+        "interval": "One-time",
+        "tax_behavior": "Exclusive",
+        "price_name": "Full-day Enterprise",
+        "description": "Full-day intensive workshop for enterprise teams on sustainability strategy"
+      }
+    ]
+  },
+  {
+    "product_name": "Sustainable Marketing Consulting",
+    "slug": "sustainable-marketing-consulting",
+    "category": "Consulting",
+    "product_id": "prod_Consult123",
+    "product_tax_code": "txcd_20060000",
+    "marketing_features": [
+      "Campaign evaluation & optimisation",
+      "Sustainable content planning",
+      "Channel & carbon efficiency analysis",
+      "Strategic roadmap recommendations"
+    ],
+    "description": "Consulting service providing expert guidance on making marketing campaigns more sustainable, improving ROI while reducing environmental impact, with a tailored plan for team implementation.",
+    "attributes": "Team Size: 1–2 consultants; Support: Email & video call support; Delivery Format: PDF & live consultation",
+    "statement_descriptor": "SUSTCONSULT",
+    "unit_label": "hour",
+    "created": "2025-07-13",
+    "updated": "2025-07-13",
+    "metadata": {
+      "category": "Consulting",
+      "source": "Green Orbit Catalogue 2025",
+      "tier": "Standard"
+    },
+    "prices": [
+      {
+        "price_id": "price_ConsultSME",
+        "unit_amount": 12000,
+        "currency": "gbp",
+        "client_type": "SME",
+        "payment_link": "https://buy.stripe.com/test_prod_ConsultSME",
+        "interval": "Hourly",
+        "tax_behavior": "Exclusive",
+        "price_name": "SME Hourly Rate",
+        "description": "Hourly consulting session for SME marketing teams"
+      },
+      {
+        "price_id": "price_ConsultEnt",
+        "unit_amount": 20000,
+        "currency": "gbp",
+        "client_type": "Enterprise",
+        "payment_link": "https://buy.stripe.com/test_prod_ConsultEnt",
+        "interval": "Hourly",
+        "tax_behavior": "Exclusive",
+        "price_name": "Enterprise Hourly Rate",
+        "description": "Enterprise-level hourly consulting on sustainable marketing"
+      }
+    ]
+  }
+]

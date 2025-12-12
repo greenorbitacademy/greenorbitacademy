@@ -1,0 +1,12 @@
+---
+import ImpactChart from './ImpactChart.astro';
+
+const { questionsData, yearlyDataArray } = Astro.props;
+---
+<section class="impact-trends">
+  <h2>Impact Trends Overview</h2>
+
+  {questionsData.impactAreas.map((area) => (
+    <ImpactChart key={area.id} area={area} yearlyDataArray={yearlyDataArray} />
+  ))}
+</section>

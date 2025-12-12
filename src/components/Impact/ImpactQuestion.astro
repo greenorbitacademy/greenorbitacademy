@@ -1,0 +1,9 @@
+---
+const { question, score } = Astro.props;
+---
+<li class="impact-question">
+  <strong>{question.text}</strong> – 
+  {score ? `${score.achievedPoints}/${question.maxPoints}` : `0/${question.maxPoints}`}
+  {score?.evidence && <div class="evidence">Evidence: {score.evidence}</div>}
+  {score?.responsible && <div class="responsible">Responsible: {score.responsible}</div>}
+</li>

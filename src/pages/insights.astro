@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import InsightsList from '../components/InsightsList.jsx';
+
+import { getCollection } from 'astro:content';
+import { slug as slugify } from 'github-slugger';
+import organisations from '../data/organisations.json';
+
+/* -------------------------------------------
+   Collections to load
+-------------------------------------------- */
+const collectionsToLoad = [
+  { key: 'blog', type: 'blog' },
+  { key: 'news', type: 'news' },
+  { key: 'resources', type: 'resource' },
+  { key: 'press-releases', type: 'press-release' },
+  { key: 'tools', type: 'tool' },
+];
+
+/* -------------------------------------------
+   Aggregate all posts
+-------------------------------------------- */
+let allInsights = [];
+
+for (const col of collectionsToLoad) {
+  const entries = await getCollection(col.key);
+
+  const formatted = entries.map(entry => ({
+    ...entry,
+    data: {
+      ...entry.data,
+      contentType: col.type,
+      pubdate: entry.data.pubdate || null,
+      title: entry.data.title || '(Untitled)',
+    },
+    collection: col.key,
+  }));
+
+  allInsights.push(...formatted);
+}
+
+/* -------------------------------------------
+   Sort newest → oldest
+-------------------------------------------- */
+allInsights.sort((a, b) => new Date(b.data.pubdate ?? 0) - new Date(a.data.pubdate ?? 0));
+
+/* -------------------------------------------
+   Map organisations to slugs
+-------------------------------------------- */
+const orgSlugMap = {};
+organisations.forEach(org => {
+  orgSlugMap[org.organisation] = org.slug;
+});
+
+allInsights = allInsights.map(item => {
+  const orgs = Array.isArray(item.data.organisations)
+    ? item.data.organisations.map(name => ({
+        name,
+        slug: orgSlugMap[name] || slugify(name),
+      }))
+    : [];
+
+  return {
+    ...item,
+    data: { ...item.data, organisations: orgs },
+  };
+});
+---
+
+<Layout title="Insights" description="Blogs, news, and resources from across Green Orbit Digital.">
+
+  <main class="py-12 w-full">
+      <Hero
+        title="Insights"
+        description="Explore the latest analysis, resources, and updates across sustainability and the space sector."
+      />
+
+      <InsightsList client:load posts={allInsights} />
+
+
+    <section class="mt-16 py-16 bg-secondary-500 text-white text-center w-full">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Stay Updated</h2>
+        <p class="mb-8 text-lg sm:text-xl text-gray-200">
+          Get monthly insights on sustainable space, marketing, and innovation.
+        </p>
+        <a
+          href="/newsletter"
+          class="inline-block px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-lg text-lg sm:text-xl"
+        >
+          Subscribe Now
+        </a>
+      </div>
+    </section>
+  </main>
+
+</Layout>

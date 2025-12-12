@@ -1,0 +1,60 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+  twitter?: {
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+}
+
+// Site-wide defaults
+const defaultMeta = {
+  title: "Green Orbit Digital – Sustainable Marketing for the Space Sector",
+  description: "A Leicester-based digital agency helping space organisations achieve sustainable growth through strategic SEO, content, PR, and digital sustainability practices.",
+  ogImage: "https://greenorbit.space/images/og-image.jpg",
+  url: "https://greenorbit.space"
+};
+
+const {
+  title = defaultMeta.title,
+  description = defaultMeta.description,
+  ogImage = defaultMeta.ogImage,
+  canonical = defaultMeta.url,
+  twitter = {}
+} = Astro.props;
+
+const twitterTitle = twitter.title || title;
+const twitterDescription = twitter.description || description;
+const twitterImage = twitter.image || ogImage;
+---
+
+<!-- Primary SEO -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content="sustainable marketing, space sector, ESG, B2B SEO, content marketing, digital sustainability" />
+
+<!-- Canonical -->
+<link rel="canonical" href={canonical} />
+
+<!-- OpenGraph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="Green Orbit Digital" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={twitterTitle} />
+<meta name="twitter:description" content={twitterDescription} />
+<meta name="twitter:image" content={twitterImage} />
+
+<!-- Optional sustainability / green signals -->
+<meta name="theme-color" content="#003366" />
+<meta name="sustainable-web-design" content="Optimised for low carbon footprint and hosted on green infrastructure." />
+<meta name="author" content="Green Orbit Digital" />
