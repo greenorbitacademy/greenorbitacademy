@@ -1687,14 +1687,14 @@ section,
 .course-details .course-sidebar .pricing-card .price .currency {
   font-size: 24px;
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--default-color);
   vertical-align: top;
 }
 
 .course-details .course-sidebar .pricing-card .price .amount {
   font-size: 48px;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--default-color);
 }
 
 .course-details .course-sidebar .pricing-card .price .period {
@@ -1735,8 +1735,8 @@ section,
 .course-details .course-sidebar .pricing-card .btn-enroll {
   width: 100%;
   padding: 15px;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: var(--default-color);
+  color: var(--accent-color);
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -1746,7 +1746,7 @@ section,
 }
 
 .course-details .course-sidebar .pricing-card .btn-enroll:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 10%);
+  background-color: color-mix(in srgb, var(--background-color), black 10%);
   transform: translateY(-2px);
 }
 
@@ -1755,7 +1755,7 @@ section,
   padding: 15px;
   background-color: transparent;
   color: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--default-color);
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -1807,8 +1807,8 @@ section,
 }
 
 .course-details .course-sidebar .course-tags {
-  background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  background-color: var(--accent-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 100%);
   border-radius: 12px;
   padding: 25px;
 }
@@ -1827,8 +1827,8 @@ section,
 
 .course-details .course-sidebar .course-tags .tags-list .tag {
   padding: 6px 12px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 0%);
+  color: var(--default-color);
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
@@ -1837,7 +1837,7 @@ section,
 
 .course-details .course-sidebar .course-tags .tags-list .tag:hover {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--default-color);
 }
 
 @media (max-width: 768px) {
@@ -1871,12 +1871,12 @@ section,
 }
 
 .tabs .nav-link:hover {
-  color: var(--accent-color);
+  color: var(--default-color);
 }
 
 .tabs .nav-link.active {
   background-color: var(--surface-color);
-  color: var(--accent-color);
+  color: var(--default-color);
   border-color: var(--accent-color);
 }
 
