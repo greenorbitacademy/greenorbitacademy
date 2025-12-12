@@ -1,70 +1,116 @@
 ---
 title: "Intermediate ESG Strategy Workshop"
-notion_page_id: 5a7b9934-b9cd-42f1-8d23-1f2e4b5c6d78
-exported_at: "2025-09-10T20:30:00+00:00"
-featuredImage: https://img.notionusercontent.com/s3/prod-files-secure%2F1234abcd-5678-90ef-1234-567890abcdef%2Fsustainable_marketing_b2b.png/size/w=2000?exp=1760000000&sig=ABC123xyz&id=abcdef12-3456-7890-abcd-ef1234567890&table=block&userId=6be61a03-d711-4ab6-ae5d-082d1492ba23
-featured: false
-facilitators:
-  - Ryan Laird
-tags:
-  - academy
-  - marketing
-  - B2B
-  - sustainability
-categories:
-  - workshop
-organisations:
-  - Green Orbit Digital
-SDGs:
-  - 12
-  - 9
-  - 17
-name: "Green Orbit Digital: Intro to Sustainable Marketing Workshop"
-excerpt: "A hands-on B2B workshop introducing the principles of sustainable marketing, designed for companies in the space and technology sectors seeking to align growth strategies with environmental and social responsibility."
+slug: "intermediate-esg-strategy-workshop"
+description: "An immersive B2B workshop helping companies advance their ESG strategies. Participants explore practical frameworks for environmental, social, and governance integration, stakeholder engagement, reporting standards, and aligning business operations with global sustainability goals."
+summary: "Develop actionable ESG strategies to enhance corporate responsibility, stakeholder trust, and sustainable growth."
+image: "/img/course/workshop-esg-strategy.webp"
+instructor:
+  name: "Ryan Laird"
+  role: "Founder & Director"
+  avatar: "/img/person/ryan.jpg"
+students: 120
+hours: 6
+duration: "1 day"
+level: "Intermediate"
+language: "English"
+prerequisites: "Basic understanding of sustainability and ESG principles"
+tags: ["ESG Strategy", "Sustainability", "B2B", "Corporate Responsibility"]
+price: 149
+originalPrice: 249
+learn:
+  - "Integrate ESG into corporate strategy and operations"
+  - "Develop measurable ESG KPIs and reporting frameworks"
+  - "Align business initiatives with UN SDGs and regulatory standards"
+  - "Engage and manage stakeholders effectively"
+  - "Identify opportunities to improve environmental and social impact"
+  - "Use case studies from the space and technology sectors for practical learning"
+curriculum:
+  - title: "Module 1: ESG Fundamentals & Strategy Integration"
+    duration: "2 hours"
+    lessons:
+      - title: "Introduction to ESG Principles and Standards"
+        duration: "45 min"
+      - title: "Integrating ESG into Business Strategy"
+        duration: "75 min"
+  - title: "Module 2: Stakeholder Engagement & Materiality"
+    duration: "2 hours"
+    lessons:
+      - title: "Identifying and Mapping Key Stakeholders"
+        duration: "60 min"
+      - title: "Engagement Strategies and Communication"
+        duration: "60 min"
+  - title: "Module 3: Measuring, Reporting & Continuous Improvement"
+    duration: "2 hours"
+    lessons:
+      - title: "Developing ESG KPIs and Reporting Frameworks"
+        duration: "60 min"
+      - title: "Case Studies and Best Practices"
+        duration: "60 min"
 
-# Product Details
-product_id: prod_SehcU2VvDBkBQr
-stripePriceId: price_1RjOHPE9V0wpcpD5hAbsQbyu
-product_tax_code: txcd_20060045
-marketing_feature_list:
-  - Basics of sustainable marketing principles and practices
-description: "A beginner-friendly introduction to sustainability principles in marketing."
-attributes: —
-statement_descriptor: INTROSMKTG
-custom_unit_label: workshops
-created_at: "2025-07-10"
-updated_at: "2025-07-11"
-metadata:
-  category: Training
-  tier: Starter
+learnColumns:
+  - ["ESG integration", "KPI development", "Reporting frameworks"]
+  - ["Stakeholder engagement", "SDG alignment", "Case studies"]
+
+features:
+  - icon: "bi bi-check-circle"
+    text: "Hands-on exercises and ESG strategy templates"
+  - icon: "bi bi-clock"
+    text: "Single-day intensive workshop"
+  - icon: "bi bi-award"
+    text: "Certificate of participation"
+
+info:
+  - label: "Prerequisites"
+    value: "Basic understanding of sustainability or ESG principles"
+  - label: "Language"
+    value: "English"
+  - label: "Level"
+    value: "Intermediate"
+  - label: "Duration"
+    value: "1 day / 6 hours"
+
+tabs:
+  - title: "Overview"
+    heading: "Workshop Overview"
+    italic: "Advance your ESG strategy through practical frameworks and case studies."
+    content: "This workshop helps B2B teams implement ESG strategies, measure impact, engage stakeholders, and align operations with global sustainability standards."
+    image: "/img/course/workshop-esg-strategy.webp"
+  - title: "Requirements"
+    heading: "What You Need"
+    content: "A laptop and prior exposure to basic ESG or sustainability concepts."
+    image: "/img/course/workshop-esg-strategy.webp"
+  - title: "Outcomes"
+    heading: "Key Takeaways"
+    content: "Participants leave with actionable ESG strategies, reporting frameworks, stakeholder engagement plans, and practical tools for continuous improvement."
+    image: "/img/course/workshop-esg-strategy.webp"
 ---
 
-**Green Orbit Digital** is proud to present the **Intro to Sustainable Marketing Workshop**, a focused B2B training session tailored for companies in the space and technology sectors. This workshop equips marketing and business development teams with practical tools to implement sustainable strategies that enhance brand reputation, reduce environmental impact, and drive long-term growth.
+## Workshop Overview
 
-## Workshop Objectives
+**Green Orbit Digital** presents the **Intermediate ESG Strategy Workshop**, a focused B2B session designed for companies looking to advance their ESG initiatives.  
 
 Participants will learn to:
 
-- Integrate sustainability into marketing campaigns and communication strategies.
-- Measure and communicate the environmental and social impact of business initiatives.
-- Align marketing objectives with UN Sustainable Development Goals (SDGs).
-- Develop actionable B2B strategies that balance profitability and purpose.
-- Explore case studies of successful sustainable campaigns in the space sector.
+- Integrate ESG into business strategy and operations  
+- Develop measurable KPIs and reporting frameworks  
+- Align initiatives with UN SDGs and regulatory standards  
+- Map and engage stakeholders effectively  
+- Apply lessons from real-world case studies in space and tech sectors  
 
-## Who Should Attend
+**Who Should Attend:**
 
-- Marketing managers and teams in B2B companies.
-- Sustainability officers and consultants.
-- Business leaders seeking to adopt responsible growth strategies.
-- Agencies supporting the space and tech sectors in their sustainability journey.
+- Sustainability officers and ESG managers  
+- Marketing and corporate strategy teams in B2B companies  
+- Business leaders seeking actionable ESG implementation strategies  
+- Consultants supporting ESG and sustainability programmes  
 
-## Key Takeaways
+**Key Takeaways:**
 
-- A structured framework for implementing sustainable marketing practices.
-- Tools to measure impact and report to stakeholders.
-- Strategies for differentiating your brand through sustainability.
-- Networking with other professionals committed to ethical and sustainable business practices.
+- Practical ESG frameworks and templates for immediate application  
+- Tools to measure and communicate corporate impact  
+- Strategies to strengthen stakeholder trust and engagement  
+- Case studies highlighting effective ESG implementation in the space and technology sectors  
 
-> “At Green Orbit Digital, we believe sustainability is not optional—it’s a business imperative. This workshop empowers companies to innovate responsibly, improve stakeholder trust, and create a meaningful impact while achieving business goals.” – Ryan Laird, Director, Green Orbit Digital
+> “This workshop empowers companies to embed ESG into their core business strategy, drive measurable impact, and build stakeholder confidence while achieving sustainable growth.” – Ryan Laird, Founder & Director, Green Orbit Digital  
 
-For more information and registration, visit [Green Orbit Digital Academy](https://greenorbit.space/news/intro-sustainable-marketing-b2b/).
+For more information and registration, visit [Green Orbit Digital Academy](https://greenorbit.space/news/intermediate-esg-strategy-workshop/).

@@ -1,0 +1,342 @@
+{
+  "$ref": "#/definitions/courses",
+  "definitions": {
+    "courses": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 4
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 500,
+          "default": ""
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 300,
+          "default": ""
+        },
+        "pubdate": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string",
+          "default": ""
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "for space",
+            "from space",
+            "in space",
+            "e-commerce",
+            "SaaS",
+            "Healthcare"
+          ]
+        },
+        "url": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "type": "string",
+                  "format": "uri"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notion_page_id": {
+          "type": "string",
+          "default": ""
+        },
+        "exported_at": {
+          "type": "string",
+          "default": ""
+        },
+        "featuredImage": {
+          "type": "string",
+          "pattern": "^(https?:\\/\\/|\\/)",
+          "errorMessage": {
+            "pattern": "featuredImage must be a full URL or start with /"
+          },
+          "default": "/images/default-featured.jpg"
+        },
+        "seoTitle": {
+          "type": "string",
+          "maxLength": 70,
+          "default": ""
+        },
+        "seoDescription": {
+          "type": "string",
+          "maxLength": 160,
+          "default": ""
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "pledges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "organisations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "SDGs": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "default": []
+        },
+        "instructor": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 3
+            },
+            "role": {
+              "type": "string",
+              "default": "Instructor"
+            },
+            "avatar": {
+              "type": "string",
+              "default": "/images/default-featured.jpg"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "image": {
+          "type": "string",
+          "default": "/images/default-featured.jpg"
+        },
+        "students": {
+          "type": "number",
+          "default": 0
+        },
+        "hours": {
+          "type": "number",
+          "default": 0
+        },
+        "duration": {
+          "type": "string",
+          "default": ""
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "Beginner",
+            "Intermediate",
+            "Advanced"
+          ],
+          "default": "Intermediate"
+        },
+        "language": {
+          "type": "string",
+          "default": "English"
+        },
+        "prerequisites": {
+          "type": "string",
+          "default": ""
+        },
+        "price": {
+          "type": "number",
+          "default": 0
+        },
+        "originalPrice": {
+          "type": "number"
+        },
+        "learn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "learnColumns": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "default": []
+        },
+        "curriculum": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "duration": {
+                "type": "string"
+              },
+              "lessons": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "duration": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ],
+                  "additionalProperties": false
+                },
+                "default": []
+              }
+            },
+            "required": [
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "tabs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "heading": {
+                "type": "string"
+              },
+              "italic": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "default": "bi bi-check-circle"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "info": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "heading": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "buttonText": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "heading",
+            "text"
+          ],
+          "additionalProperties": false
+        },
+        "enrollUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "previewUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

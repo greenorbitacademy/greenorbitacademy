@@ -1,0 +1,227 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+
+// Generate static paths for courses
+export async function getStaticPaths() {
+  const courses = await getCollection('courses');
+  return courses.map(entry => ({
+    params: { slug: entry.slug },
+    props: { course: entry.data, body: entry.body },
+  }));
+}
+
+const { course, body } = Astro.props;
+const featured = course.image ?? '/img/course-details-1.webp';
+---
+
+<Layout title={course.title} description={course.description}>
+  <main class="main index-page">
+
+    <!-- Page Title / Hero -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container text-center">
+          <h1>{course.title}</h1>
+          <p class="mb-0">{course.summary ?? course.description}</p>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li class="current">{course.title}</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <!-- course Details -->
+    <section id="course-details" class="course-details section">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+
+            <!-- Header -->
+            <div class="course-header mb-4">
+              <img src={featured} alt={course.title} class="img-fluid mb-3" />
+
+              {course.instructor && (
+                <div class="instructor d-flex align-items-center mb-3">
+                  <img src={course.instructor.avatar ?? featured} alt={course.instructor.name} class="instructor-avatar me-2" />
+                  <div>
+                    <h6>{course.instructor.name}</h6>
+                    <span>{course.instructor.role}</span>
+                  </div>
+                </div>
+              )}
+
+              <div class="course-meta d-flex gap-3 flex-wrap mb-4">
+                {course.students !== undefined && <div><i class="bi bi-people"></i> {(course.students).toLocaleString()} students</div>}
+                {course.hours && <div><i class="bi bi-clock"></i> {course.hours} hours</div>}
+                {course.duration && <div><i class="bi bi-calendar"></i> {course.duration}</div>}
+                {course.level && <div><i class="bi bi-bar-chart"></i> {course.level}</div>}
+                {course.language && <div><i class="bi bi-globe"></i> {course.language}</div>}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="course-content mb-4">
+              <div innerHTML={body}></div>
+
+              {course.learn?.length && (
+                <div class="what-you-learn mb-4">
+                  <h3>What You'll Learn</h3>
+                  <div class="row">
+                    {course.learnColumns?.length
+                      ? course.learnColumns.map((col, i) => (
+                          <div class="col-md-6" key={i}>
+                            <ul class="learn-list">
+                              {col.map(item => <li><i class="bi bi-check-circle"></i> {item}</li>)}
+                            </ul>
+                          </div>
+                        ))
+                      : <div class="col-12">
+                          <ul class="learn-list">
+                            {course.learn.map(item => <li><i class="bi bi-check-circle"></i> {item}</li>)}
+                          </ul>
+                        </div>
+                    }
+                  </div>
+                </div>
+              )}
+
+{course.curriculum?.length && (
+  <div class="course-curriculum" data-aos="fade-up" data-aos-delay="400">
+    <h3>Course Curriculum</h3>
+
+    {course.curriculum.map((module) => (
+      <div class="curriculum-section">
+        <div class="section-header">
+          <h4>{module.title}</h4>
+          <span class="lessons-count">{module.lessons?.length ?? 0} lessons • {module.duration}</span>
+        </div>
+        <div class="lessons">
+          {module.lessons?.map((lesson) => (
+            <div class="lesson-item">
+              <div class="lesson-info">
+                <i class={`bi ${lesson.icon ?? 'bi-play-circle'}`}></i>
+                <span>{lesson.title}</span>
+              </div>
+              {lesson.duration && <span class="lesson-duration">{lesson.duration}</span>}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <aside class="course-sidebar">
+
+              <!-- Pricing -->
+              {course.price !== undefined && (
+                <div class="pricing-card mb-4">
+                  <div class="price">
+                    <span class="currency">£</span>
+                    <span class="amount">{course.price}</span>
+                    <span class="period">/course</span>
+                  </div>
+                  {course.originalPrice && <div class="original-price">£{course.originalPrice}</div>}
+                  {course.features?.length && (
+                    <ul class="course-features list-unstyled mt-2">
+                      {course.features.map(f => <li key={f.text}><i class={f.icon}></i> {f.text}</li>)}
+                    </ul>
+                  )}
+                  {course.enrollUrl && <a class="btn-enroll mt-3" href={course.enrollUrl}>Enroll Now</a>}
+                  {course.previewUrl && <a class="btn-preview mt-2" href={course.previewUrl}>Preview Course</a>}
+                </div>
+              )}
+
+              {/* Course Info */}
+              {course.info?.length && (
+                <div class="course-info-card mb-4">
+                  <h4>Course Information</h4>
+                  {course.info.map(item => (
+                    <div class="info-item" key={item.label}>
+                      <span class="label">{item.label}</span>
+                      <span class="value">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Tags */}
+              {course.tags?.length && (
+                <div class="course-tags mb-4">
+                  <h4>Tags</h4>
+                  <div class="tags-list d-flex flex-wrap gap-1">
+                    {course.tags.map(tag => <span key={tag} class="tag badge background-color">{tag}</span>)}
+                  </div>
+                </div>
+              )}
+
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    {course.tabs?.length && (
+      <section id="tabs" class="tabs section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                {course.tabs.map((tab, i) => (
+                  <li class="nav-item" key={i}>
+                    <a class={`nav-link ${i === 0 ? 'active show' : ''}`} data-bs-toggle="tab" href={`#tab-${i+1}`}>{tab.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+              <div class="tab-content">
+                {course.tabs.map((tab, i) => (
+                  <div class={`tab-pane ${i === 0 ? 'active show' : ''}`} id={`tab-${i+1}`} key={i}>
+                    <div class="row">
+                      <div class="col-lg-8 details order-2 order-lg-1">
+                        {tab.heading && <h3>{tab.heading}</h3>}
+                        {tab.italic && <p class="fst-italic">{tab.italic}</p>}
+                        {tab.content && <p>{tab.content}</p>}
+                      </div>
+                      {tab.image && (
+                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                          <img src={tab.image} alt="" class="img-fluid" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- CTA -->
+    {course.cta && (
+      <div class="cta-box section-title" data-aos="fade-up">
+        <h2>{course.cta.heading}</h2>
+        <p>{course.cta.text}</p>
+        {course.cta.url && <a href={course.cta.url} class="btn-getstarted"><strong>{course.cta.buttonText ?? 'Get Started'}</strong></a>}
+      </div>
+    )}
+  <CTA/>
+  </main>
+</Layout>

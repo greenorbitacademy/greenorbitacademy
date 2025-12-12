@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
 import CTA from '../components/CTA.jsx';
 ---
 
@@ -8,11 +7,33 @@ import CTA from '../components/CTA.jsx';
   title="Pricing | Green Orbit Academy" 
   description="Transparent, flexible pricing for ESG marketing, audits, sustainability reporting, workshops, retainers, and Flexi Support Packages.">
 
-  <main class="py-8">
-    <HeroSection 
-      title="Pricing & Packages"
-      description="Transparent and flexible pricing for sustainable growth. From fixed-price audits and ESG reports to retainers and Flexi Support blocks — choose a structure that fits your organisation’s needs and pace."
-    />
+  <main class="main index-page">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Pricing</h1>
+              <p class="mb-0">
+                Transparent, flexible pricing for ESG marketing, audits, sustainability reporting, workshops, retainers, and Flexi Support Packages.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Trainers</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
 
     <section class="py-16 bg-white dark:bg-secondary-500">
       <div class="container-custom space-y-24">
@@ -20,7 +41,7 @@ import CTA from '../components/CTA.jsx';
         <!-- FIXED PRICE SERVICES -->
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span class="inline-block px-4 py-1 rounded-full bg-secondary-100 dark:bg-accent-500 text-secondary-600 dark:text-white font-medium text-sm mb-4">
+            <span class="inline-block px-4 py-1 rounded-fullfont-medium text-sm mb-4">
               Fixed-Price Services
             </span>
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Clarity. Confidence. Control.</h2>

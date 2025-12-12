@@ -1,71 +1,116 @@
 ---
 title: "Advanced ESG Reporting Workshop"
-notion_page_id: 5a7b9934-b9cd-42f1-8d23-1f2e4b5c6d78
-exported_at: "2025-09-10T20:30:00+00:00"
-slug: intro-sustainable-marketing-b2b
-featuredImage: https://img.notionusercontent.com/s3/prod-files-secure%2F1234abcd-5678-90ef-1234-567890abcdef%2Fsustainable_marketing_b2b.png/size/w=2000?exp=1760000000&sig=ABC123xyz&id=abcdef12-3456-7890-abcd-ef1234567890&table=block&userId=6be61a03-d711-4ab6-ae5d-082d1492ba23
-featured: false
-facilitators:
-  - Ryan Laird
-tags:
-  - academy
-  - marketing
-  - B2B
-  - sustainability
-categories:
-  - workshop
-organisations:
-  - Green Orbit Digital
-SDGs:
-  - 12
-  - 9
-  - 17
-name: "Green Orbit Digital: Intro to Sustainable Marketing Workshop"
-excerpt: "A hands-on B2B workshop introducing the principles of sustainable marketing, designed for companies in the space and technology sectors seeking to align growth strategies with environmental and social responsibility."
+slug: "advanced-esg-reporting-workshop"
+description: "An intensive B2B workshop focused on advanced ESG reporting practices. Participants learn to produce high-quality sustainability reports, meet regulatory and investor requirements, and implement transparent ESG disclosure frameworks aligned with global standards."
+summary: "Master ESG reporting frameworks and disclosure practices to enhance corporate transparency and stakeholder trust."
+image: "/img/course/workshop-esg-reporting.webp"
+instructor:
+  name: "Ryan Laird"
+  role: "Founder & Director"
+  avatar: "/img/person/ryan.jpg"
+students: 80
+hours: 6
+duration: "1 day"
+level: "Advanced"
+language: "English"
+prerequisites: "Intermediate knowledge of ESG principles and corporate sustainability"
+tags: ["ESG Reporting", "Sustainability", "Corporate Responsibility", "B2B"]
+price: 199
+originalPrice: 299
+learn:
+  - "Advanced ESG reporting frameworks and disclosure standards"
+  - "Align reporting with global sustainability frameworks such as GRI, SASB, and TCFD"
+  - "Communicate ESG performance effectively to investors and stakeholders"
+  - "Measure and analyse ESG KPIs for continuous improvement"
+  - "Use ESG reporting to support strategic decision-making"
+  - "Explore real-world case studies from space, technology, and industrial sectors"
+curriculum:
+  - title: "Module 1: ESG Reporting Standards & Frameworks"
+    duration: "2 hours"
+    lessons:
+      - title: "Introduction to GRI, SASB, TCFD, and UN SDGs"
+        duration: "60 min"
+      - title: "Selecting the Right Framework for Your Organisation"
+        duration: "60 min"
+  - title: "Module 2: Data Collection, Metrics & KPIs"
+    duration: "2 hours"
+    lessons:
+      - title: "Defining ESG Metrics and KPIs"
+        duration: "60 min"
+      - title: "Collecting, Validating, and Analysing ESG Data"
+        duration: "60 min"
+  - title: "Module 3: Reporting, Disclosure & Communication"
+    duration: "2 hours"
+    lessons:
+      - title: "Building Transparent ESG Reports"
+        duration: "60 min"
+      - title: "Communicating ESG Impact to Stakeholders"
+        duration: "60 min"
 
-# Product Details
-product_id: prod_SehcU2VvDBkBQr
-stripePriceId: price_1RjOHPE9V0wpcpD5hAbsQbyu
-product_tax_code: txcd_20060045
-marketing_feature_list:
-  - Basics of sustainable marketing principles and practices
-description: "A beginner-friendly introduction to sustainability principles in marketing."
-attributes: —
-statement_descriptor: INTROSMKTG
-custom_unit_label: workshops
-created_at: "2025-07-10"
-updated_at: "2025-07-11"
-metadata:
-  category: Training
-  tier: Starter
+learnColumns:
+  - ["ESG frameworks", "Reporting standards", "KPI analysis"]
+  - ["Stakeholder communication", "Data collection", "Continuous improvement"]
+
+features:
+  - icon: "bi bi-check-circle"
+    text: "Hands-on ESG reporting exercises and templates"
+  - icon: "bi bi-clock"
+    text: "Single-day intensive workshop"
+  - icon: "bi bi-award"
+    text: "Certificate of completion"
+
+info:
+  - label: "Prerequisites"
+    value: "Intermediate understanding of ESG and sustainability principles"
+  - label: "Language"
+    value: "English"
+  - label: "Level"
+    value: "Advanced"
+  - label: "Duration"
+    value: "1 day / 6 hours"
+
+tabs:
+  - title: "Overview"
+    heading: "Workshop Overview"
+    italic: "Advanced ESG reporting practices to strengthen transparency and accountability."
+    content: "This workshop equips B2B teams with the knowledge and tools to produce robust ESG reports, comply with global standards, and communicate ESG performance effectively."
+    image: "/img/course/workshop-esg-reporting.webp"
+  - title: "Requirements"
+    heading: "What You Need"
+    content: "Laptop, access to your company’s ESG data, and prior exposure to ESG concepts."
+    image: "/img/course/workshop-esg-reporting.webp"
+  - title: "Outcomes"
+    heading: "Key Takeaways"
+    content: "Participants will leave with templates, reporting frameworks, stakeholder communication strategies, and actionable tools to enhance ESG transparency."
+    image: "/img/course/workshop-esg-reporting.webp"
 ---
 
-**Green Orbit Digital** is proud to present the **Intro to Sustainable Marketing Workshop**, a focused B2B training session tailored for companies in the space and technology sectors. This workshop equips marketing and business development teams with practical tools to implement sustainable strategies that enhance brand reputation, reduce environmental impact, and drive long-term growth.
+## Workshop Overview
 
-## Workshop Objectives
+**Green Orbit Digital** presents the **Advanced ESG Reporting Workshop**, designed for B2B teams seeking to elevate their sustainability reporting and stakeholder communication.  
 
 Participants will learn to:
 
-- Integrate sustainability into marketing campaigns and communication strategies.
-- Measure and communicate the environmental and social impact of business initiatives.
-- Align marketing objectives with UN Sustainable Development Goals (SDGs).
-- Develop actionable B2B strategies that balance profitability and purpose.
-- Explore case studies of successful sustainable campaigns in the space sector.
+- Apply advanced ESG reporting frameworks and global standards  
+- Define KPIs and collect, validate, and analyse ESG data  
+- Build transparent and actionable ESG reports  
+- Communicate ESG performance effectively to investors and stakeholders  
+- Use reporting insights to drive strategic decisions and continuous improvement  
 
-## Who Should Attend
+**Who Should Attend:**
 
-- Marketing managers and teams in B2B companies.
-- Sustainability officers and consultants.
-- Business leaders seeking to adopt responsible growth strategies.
-- Agencies supporting the space and tech sectors in their sustainability journey.
+- ESG and sustainability managers  
+- Corporate strategy and reporting teams  
+- Business leaders and decision-makers in B2B sectors  
+- Consultants supporting ESG and sustainability reporting  
 
-## Key Takeaways
+**Key Takeaways:**
 
-- A structured framework for implementing sustainable marketing practices.
-- Tools to measure impact and report to stakeholders.
-- Strategies for differentiating your brand through sustainability.
-- Networking with other professionals committed to ethical and sustainable business practices.
+- Comprehensive ESG reporting templates and guidance  
+- Tools to measure and communicate ESG performance  
+- Strategies for enhancing transparency and stakeholder trust  
+- Case studies demonstrating successful ESG reporting in real-world contexts  
 
-> “At Green Orbit Digital, we believe sustainability is not optional—it’s a business imperative. This workshop empowers companies to innovate responsibly, improve stakeholder trust, and create a meaningful impact while achieving business goals.” – Ryan Laird, Director, Green Orbit Digital
+> “Accurate and transparent ESG reporting is essential for building trust and driving sustainable growth. This workshop equips companies with the tools and frameworks to report with confidence and impact.” – Ryan Laird, Founder & Director, Green Orbit Digital  
 
-For more information and registration, visit [Green Orbit Digital Academy](https://greenorbit.space/news/intro-sustainable-marketing-b2b/).
+For more information and registration, visit [Green Orbit Digital Academy](https://greenorbit.space/news/advanced-esg-reporting-workshop/).

@@ -1,24 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
+import CTA from '../components/CTA.astro';
 ---
 
+<Layout
+  title="Green Orbit Academy"
+  description="Empowering the next generation of sustainable space leaders through expert-led training, practical tools, and interdisciplinary learning."
+>
+  <main class="main index-page">
 
-<Layout title="Webinars">
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Webinars</h1>
+              <p class="mb-0">
+                Our training series provides immersive, high-impact learning experiences designed to help teams communicate science clearly, innovate with confidence, and build strategic alignment. Delivered by Green Orbit Academy, each training blends practical exercises, expert facilitation, and real-world challenges to accelerate capability building across organisations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Webinars</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
 
-  <main class="py-8">
-    <Hero
-      title="Webinars" 
-      description="Choose a plan that fits your mission. All options include a 14-day free trial—no credit card required."
-    />
-
-  </main>
-    <!-- Full-Width CTA -->
-    <section class="w-full bg-secondary-500 py-16 text-white text-center">
-      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to collaborate?</h2>
-        <p class="mb-8 text-lg sm:text-xl text-gray-200">Let’s drive responsible growth for your organisation. Get in touch for a custom package or exploratory call.</p>
-        <a href="/contact" class="inline-block w-full sm:w-auto px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-lg transition text-lg sm:text-xl">Contact Us</a>
+    <!-- Webinar Section -->
+    <section id="Webinars" class="webinars section">
+      <div class="container">
+        <p>webinar</p>
       </div>
     </section>
+    <CTA/>
+    </main>
 </Layout> 

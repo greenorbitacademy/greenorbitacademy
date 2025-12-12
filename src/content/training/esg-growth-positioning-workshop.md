@@ -1,71 +1,117 @@
 ---
 title: "ESG Growth Positioning Workshop"
-notion_page_id: 5a7b9934-b9cd-42f1-8d23-1f2e4b5c6d78
-exported_at: "2025-09-10T20:30:00+00:00"
-slug: intro-sustainable-marketing-b2b
-featuredImage: https://img.notionusercontent.com/s3/prod-files-secure%2F1234abcd-5678-90ef-1234-567890abcdef%2Fsustainable_marketing_b2b.png/size/w=2000?exp=1760000000&sig=ABC123xyz&id=abcdef12-3456-7890-abcd-ef1234567890&table=block&userId=6be61a03-d711-4ab6-ae5d-082d1492ba23
-featured: false
-facilitators:
-  - Ryan Laird
-tags:
-  - academy
-  - marketing
-  - B2B
-  - sustainability
-categories:
-  - workshop
-organisations:
-  - Green Orbit Digital
-SDGs:
-  - 12
-  - 9
-  - 17
-name: "Green Orbit Digital: Intro to Sustainable Marketing Workshop"
-excerpt: "A hands-on B2B workshop introducing the principles of sustainable marketing, designed for companies in the space and technology sectors seeking to align growth strategies with environmental and social responsibility."
+slug: "esg-growth-positioning"
+description: "Learn to position your organisation for growth through effective ESG strategies. Focus on leveraging ESG credentials for brand differentiation, investor engagement, and sustainable business development."
+summary: "A practical B2B workshop to integrate ESG into growth strategy and stakeholder communication."
+image: "/img/course/course-esg-growth-positioning.webp"
+instructor:
+  name: "Ryan Laird"
+  role: "Founder & Director"
+  avatar: "/img/person/ryan.jpg"
+students: 120
+hours: 6
+duration: "1 day / 6 hours"
+level: "Intermediate"
+language: "English"
+prerequisites: "Basic understanding of sustainability and ESG concepts"
+tags: ["ESG", "Sustainability", "Strategy", "B2B", "Marketing"]
+price: 399
+originalPrice: 499
+learn:
+  - "Translate ESG initiatives into measurable business value"
+  - "Position your brand through ESG-led growth strategies"
+  - "Communicate ESG achievements effectively to stakeholders"
+  - "Align ESG strategy with investor expectations and SDGs"
+  - "Integrate ESG considerations into marketing and business development"
+curriculum:
+  - title: "Module 1: ESG Foundations and Business Relevance"
+    duration: "1.5 hours"
+    lessons:
+      - title: "Understanding ESG and Its Impact on Growth"
+        duration: "45 min"
+      - title: "Mapping ESG to Business Objectives"
+        duration: "45 min"
+  - title: "Module 2: Positioning Your Organisation"
+    duration: "1.5 hours"
+    lessons:
+      - title: "Identifying Differentiators and Value Drivers"
+        duration: "45 min"
+      - title: "Aligning ESG with Brand and Market Opportunities"
+        duration: "45 min"
+  - title: "Module 3: Stakeholder Engagement & Communication"
+    duration: "2 hours"
+    lessons:
+      - title: "Engaging Investors and Partners Through ESG"
+        duration: "60 min"
+      - title: "Marketing ESG for B2B Growth"
+        duration: "60 min"
+  - title: "Module 4: Measuring Success and Next Steps"
+    duration: "1 hour"
+    lessons:
+      - title: "KPIs and Reporting for ESG Impact"
+        duration: "30 min"
+      - title: "Embedding ESG into Long-term Growth Strategy"
+        duration: "30 min"
 
-# Product Details
-product_id: prod_SehcU2VvDBkBQr
-stripePriceId: price_1RjOHPE9V0wpcpD5hAbsQbyu
-product_tax_code: txcd_20060045
-marketing_feature_list:
-  - Basics of sustainable marketing principles and practices
-description: "A beginner-friendly introduction to sustainability principles in marketing."
-attributes: —
-statement_descriptor: INTROSMKTG
-custom_unit_label: workshops
-created_at: "2025-07-10"
-updated_at: "2025-07-11"
-metadata:
-  category: Training
-  tier: Starter
+learnColumns:
+  - ["ESG strategy integration", "Business growth alignment", "SDG mapping"]
+  - ["Stakeholder engagement", "ESG reporting", "Marketing differentiation"]
+
+features:
+  - icon: "bi bi-check-circle"
+    text: "Practical ESG frameworks and templates"
+  - icon: "bi bi-clock"
+    text: "Single-day intensive workshop"
+  - icon: "bi bi-award"
+    text: "Certificate of completion"
+
+info:
+  - label: "Prerequisites"
+    value: "Basic understanding of ESG and sustainability"
+  - label: "Language"
+    value: "English"
+  - label: "Level"
+    value: "Intermediate"
+  - label: "Duration"
+    value: "1 day / 6 hours"
+
+tabs:
+  - title: "Overview"
+    heading: "Course Overview"
+    italic: "Turn ESG into a growth driver for your organisation."
+    content: "This workshop helps businesses leverage ESG initiatives for brand differentiation, investor engagement, and long-term sustainable growth. Participants will gain practical tools to position ESG at the heart of business strategy."
+    image: "/img/course/course-esg-growth-positioning.webp"
+  - title: "Requirements"
+    heading: "What You Need"
+    content: "Laptop for exercises, access to internal ESG initiatives or sustainability data, and basic familiarity with ESG principles."
+    image: "/img/course/course-esg-growth-positioning.webp"
+  - title: "Outcomes"
+    heading: "Key Takeaways"
+    content: "Participants will leave with a roadmap for ESG-led growth, tools to communicate ESG performance effectively, and frameworks to integrate ESG into business strategy for measurable impact."
+    image: "/img/course/course-esg-growth-positioning.webp"
 ---
 
-**Green Orbit Digital** is proud to present the **Intro to Sustainable Marketing Workshop**, a focused B2B training session tailored for companies in the space and technology sectors. This workshop equips marketing and business development teams with practical tools to implement sustainable strategies that enhance brand reputation, reduce environmental impact, and drive long-term growth.
+## Course Overview
 
-## Workshop Objectives
+**Green Orbit Academy** presents the **ESG Growth Positioning Workshop**, designed to help organisations translate ESG initiatives into measurable business value.  
 
 Participants will learn to:
 
-- Integrate sustainability into marketing campaigns and communication strategies.
-- Measure and communicate the environmental and social impact of business initiatives.
-- Align marketing objectives with UN Sustainable Development Goals (SDGs).
-- Develop actionable B2B strategies that balance profitability and purpose.
-- Explore case studies of successful sustainable campaigns in the space sector.
+- Map ESG initiatives to business objectives and growth opportunities  
+- Position their brand through ESG differentiation in the marketplace  
+- Communicate ESG achievements effectively to investors, partners, and customers  
+- Align ESG strategy with Sustainable Development Goals (SDGs) and stakeholder expectations  
 
-## Who Should Attend
+**Who Should Attend:**
 
-- Marketing managers and teams in B2B companies.
-- Sustainability officers and consultants.
-- Business leaders seeking to adopt responsible growth strategies.
-- Agencies supporting the space and tech sectors in their sustainability journey.
+- Sustainability and ESG managers  
+- Marketing and business development teams  
+- Executives seeking to leverage ESG for growth  
+- Consultants supporting ESG integration for B2B companies  
 
-## Key Takeaways
+**Key Takeaways:**
 
-- A structured framework for implementing sustainable marketing practices.
-- Tools to measure impact and report to stakeholders.
-- Strategies for differentiating your brand through sustainability.
-- Networking with other professionals committed to ethical and sustainable business practices.
-
-> “At Green Orbit Digital, we believe sustainability is not optional—it’s a business imperative. This workshop empowers companies to innovate responsibly, improve stakeholder trust, and create a meaningful impact while achieving business goals.” – Ryan Laird, Director, Green Orbit Digital
-
-For more information and registration, visit [Green Orbit Digital Academy](https://greenorbit.space/news/intro-sustainable-marketing-b2b/).
+- Practical frameworks to embed ESG into business strategy  
+- Tools for measuring and communicating ESG impact  
+- Strategies to differentiate your brand and engage key stakeholders  
+- Insights from successful ESG-driven growth case studies  

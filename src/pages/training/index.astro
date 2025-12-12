@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const trainings = await getCollection('training');
+---
+
+<Layout
+  title="Green Orbit Academy"
+  description="Empowering the next generation of sustainable space leaders through expert-led training, practical tools, and interdisciplinary learning."
+>
+  <main class="main index-page">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Training</h1>
+              <p class="mb-0">
+                Our training series provides immersive, high-impact learning experiences designed to help teams communicate science clearly, innovate with confidence, and build strategic alignment. Delivered by Green Orbit Academy, each training blends practical exercises, expert facilitation, and real-world challenges to accelerate capability building across organisations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Training</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <!-- trainings Section -->
+    <section id="trainings" class="courses section">
+      <div class="container">
+        <div class="row">
+          {trainings.map((training, i) => (
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay={100 + i*100}>
+              <div class="course-item">
+                <img src={training.data.image ?? '/images/default-featured.jpg'} class="img-fluid" alt={training.data.title} />
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <p class="category">{training.data.category}</p>
+                  </div>
+                  <h3>
+                    <a href={`/training/${training.slug}`}>{training.data.title}</a>
+                  </h3>
+                  <p class="description">{training.data.description}</p>
+
+                  {training.data.instructor && (
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                      <div class="trainer-profile d-flex align-items-center">
+                        <img src={training.data.instructor.avatar ?? '/images/default-featured.jpg'} class="img-fluid" alt={training.data.instructor.name} />
+                        <a href="../trainers" class="trainer-link">{training.data.instructor.name}</a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-box section-title" data-aos="fade-up">
+      <h2>Get in touch</h2>
+      <p>
+        Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
+      </p>
+      <a href="contact" class="btn-getstarted"><strong>Contact Us</strong></a>
+    </div>
+
+  </main>
+</Layout>

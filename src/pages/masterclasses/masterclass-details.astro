@@ -3,13 +3,41 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 ---
 
+
 <Layout
   title="Green Orbit Academy"
   description="Empowering the next generation of sustainable space leaders through expert-led training, practical tools, and interdisciplinary learning."
 >
   <main class="main index-page">
     <!-- Hero Section -->
-    <Hero />
+
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+  <div class="heading">
+    <div class="container">
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>TMasterclasses</h1>
+          <p class="mb-0">
+            Our Masterclass series provides deep-dive, expert-led sessions designed for professionals seeking advanced, 
+            sector-specific capability building. Delivered by the Great Orbit Academy, these masterclasses blend strategic insight,  practical tools, and emerging trends to accelerate growth in communications, sustainability leadership, and digital transformation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="breadcrumbs">
+    <div class="container">
+      <ol>
+            <li><a href="../index">Home</a></li>
+            <li><a href="index">Masterclasses</a></li>
+        <li class="current">Masterclass Details</li>
+      </ol>
+    </div>
+  </nav>
+</div>
+<!-- End Page Title -->
 
 
     <!-- Page Title -->

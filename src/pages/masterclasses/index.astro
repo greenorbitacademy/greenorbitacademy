@@ -1,6 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/Hero.astro';
+
+const masterclasses = await getCollection('masterclasses');
 ---
 
 <Layout
@@ -8,200 +10,73 @@ import Hero from '../../components/Hero.astro';
   description="Empowering the next generation of sustainable space leaders through expert-led training, practical tools, and interdisciplinary learning."
 >
   <main class="main index-page">
-    <!-- Hero Section -->
-    
-<!-- Page Title -->
-<div class="page-title" data-aos="fade">
-  <div class="heading">
-    <div class="container">
-      <div class="row d-flex justify-content-center text-center">
-        <div class="col-lg-8">
-          <h1>Masterclasses</h1>
-          <p class="mb-0">
-            Our Masterclass series provides deep-dive, expert-led sessions designed for professionals seeking advanced, 
-            sector-specific capability building. Delivered by the Impact Orbit Academy, these masterclasses blend strategic insight, 
-            practical tools, and emerging trends to accelerate growth in communications, sustainability leadership, and digital transformation.
-          </p>
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Masterclasses</h1>
+              <p class="mb-0">
+                Our masterclass series provides immersive, high-impact learning experiences designed to help teams communicate science clearly, innovate with confidence, and build strategic alignment. Delivered by Green Orbit Academy, each masterclass blends practical exercises, expert facilitation, and real-world challenges to accelerate capability building across organisations.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Masterclasses</li>
+          </ol>
+        </div>
+      </nav>
     </div>
-  </div>
 
-  <nav class="breadcrumbs">
-    <div class="container">
-      <ol>
-        <li><a href="index">Home</a></li>
-        <li class="current">Masterclasses</li>
-      </ol>
+    <!-- masterclasses Section -->
+    <section id="masterclasses" class="courses section">
+      <div class="container">
+        <div class="row">
+          {masterclasses.map((masterclass, i) => (
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay={100 + i*100}>
+              <div class="course-item">
+                <img src={masterclass.data.image ?? '/images/default-featured.jpg'} class="img-fluid" alt={masterclass.data.title} />
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <p class="category">{masterclass.data.category}</p>
+                  </div>
+                  <h3>
+                    <a href={`/masterclasses/${masterclass.slug}`}>{masterclass.data.title}</a>
+                  </h3>
+                  <p class="description">{masterclass.data.description}</p>
+
+                  {masterclass.data.instructor && (
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                      <div class="trainer-profile d-flex align-items-center">
+                        <img src={masterclass.data.instructor.avatar ?? '/images/default-featured.jpg'} class="img-fluid" alt={masterclass.data.instructor.name} />
+                        <a href="../trainers" class="trainer-link">{masterclass.data.instructor.name}</a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-box section-title" data-aos="fade-up">
+      <h2>Get in touch</h2>
+      <p>
+        Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
+      </p>
+      <a href="contact" class="btn-getstarted"><strong>Contact Us</strong></a>
     </div>
-  </nav>
-</div>
-<!-- End Page Title -->
-
-<!-- Masterclasses Section -->
-<section id="masterclasses" class="courses section">
-  <div class="container">
-    <div class="row">
-
-      <!-- Communications Excellence -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-        <div class="course-item">
-          <img src="/img/course/course-3.webp" class="img-fluid" alt="Communications Excellence">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Communications</p>
-            </div>
-            <h3><a href="masterclass-communications">Communications Excellence</a></h3>
-            <p class="description">
-              A high-level masterclass designed for leaders, spokespeople, and communication professionals who need 
-              to communicate with clarity, authority, and impact. Explore message architecture, strategic storytelling, 
-              media performance, and executive presence. Ideal for science, technology, policy, and innovation sectors.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Space & Sustainability -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-        <div class="course-item">
-          <img src="../img/course/course-1.webp" class="img-fluid" alt="Space & Sustainability">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Sustainability</p>
-            </div>
-            <h3><a href="masterclass-space-sustainability">Space & Sustainability</a></h3>
-            <p class="description">
-              A specialist masterclass exploring the rapidly evolving intersection between the space sector, 
-              climate action, ESG standards, and sustainability strategy. Participants gain insights into environmental 
-              reporting for space missions, sustainable space operations, and leveraging space technology for 
-              terrestrial sustainability challenges. Perfect for industry leaders, engineers, investors, and policymakers.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- AI & Digital Skills -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-        <div class="course-item">
-          <img src="../img/course/course-2.webp" class="img-fluid" alt="AI & Digital Skills">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Digital Skills</p>
-            </div>
-            <h3><a href="masterclass-ai-digital">AI & Digital Skills</a></h3>
-            <p class="description">
-              An advanced masterclass equipping teams with practical AI fluency and digital transformation capabilities. 
-              Covers AI productivity tools, data-informed decision making, automation workflows, digital ethics, and 
-              human-centred design. Tailored for organisations modernising their operations and upskilling their workforce.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Strategic Storytelling -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="400">
-        <div class="course-item">
-          <img src="../img/course/course-1.webp" class="img-fluid" alt="Strategic Storytelling">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Communications</p>
-            </div>
-            <h3><a href="masterclass-storytelling">Strategic Storytelling</a></h3>
-            <p class="description">
-              Learn to craft narratives that resonate with stakeholders and drive engagement. 
-              Focus on story arcs, messaging strategies, and translating complex technical topics into compelling, actionable insights.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Leadership Development -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="500">
-        <div class="course-item">
-          <img src="../img/course/course-2.webp" class="img-fluid" alt="Leadership Development">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Leadership</p>
-            </div>
-            <h3><a href="masterclass-leadership-development">Leadership Development</a></h3>
-            <p class="description">
-              Enhance leadership capabilities in a rapidly evolving professional landscape. 
-              Explore decision-making, team management, conflict resolution, and fostering innovation within high-performance teams.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Campaign Planning -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="600">
-        <div class="course-item">
-          <img src="../img/course/course-3.webp" class="img-fluid" alt="Campaign Planning">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Marketing Strategy</p>
-            </div>
-            <h3><a href="masterclass-campaign-planning">Campaign Planning</a></h3>
-            <p class="description">
-              Build and execute high-impact campaigns using data-driven insights. Includes audience research, 
-              channel strategy, KPI setting, and measurement frameworks to maximise visibility and results.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-    </div>
-  </div>
-</section>
-<!-- End Masterclasses Section -->
-<div class="cta-box section-title" data-aos="fade-up">
-  <h2>Get in touch</h2>
-  <p>
-    Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
-  </p>
-  <a href="contact" class="btn-getstarted"><strong>Contact Us</strong></a>
-</div>
 
   </main>
 </Layout>

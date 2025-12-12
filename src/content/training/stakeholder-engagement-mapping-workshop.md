@@ -1,70 +1,112 @@
 ---
 title: "Stakeholder Engagement Mapping Workshop"
-notion_page_id: 5a7b9934-b9cd-42f1-8d23-1f2e4b5c6d78
-exported_at: "2025-09-10T20:30:00+00:00"
-featuredImage: https://img.notionusercontent.com/s3/prod-files-secure%2F1234abcd-5678-90ef-1234-567890abcdef%2Fsustainable_marketing_b2b.png/size/w=2000?exp=1760000000&sig=ABC123xyz&id=abcdef12-3456-7890-abcd-ef1234567890&table=block&userId=6be61a03-d711-4ab6-ae5d-082d1492ba23
-featured: false
-facilitators:
-  - Ryan Laird
-tags:
-  - academy
-  - marketing
-  - B2B
-  - sustainability
-categories:
-  - workshop
-organisations:
-  - Green Orbit Digital
-SDGs:
-  - 12
-  - 9
-  - 17
-name: "Green Orbit Digital: Intro to Sustainable Marketing Workshop"
-excerpt: "A hands-on B2B workshop introducing the principles of sustainable marketing, designed for companies in the space and technology sectors seeking to align growth strategies with environmental and social responsibility."
+slug: "stakeholder-engagement-mapping"
+description: "A hands-on B2B workshop introducing the principles of sustainable marketing. Designed for companies in the space and technology sectors seeking to align growth strategies with environmental and social responsibility."
+summary: "Learn to integrate sustainability into marketing campaigns, measure impact, and map key stakeholders effectively."
+image: "/img/course/workshop-sustainable-marketing.webp"
+instructor:
+  name: "Ryan Laird"
+  role: "Founder & Director"
+  avatar: "/img/person/ryan.jpg"
+students: 120
+hours: 4
+duration: "1 day"
+level: "Beginner"
+language: "English"
+prerequisites: "None – suitable for all B2B marketing and business professionals"
+tags: ["Sustainable Marketing", "B2B", "Stakeholder Engagement", "Space Sector"]
+price: 99
+originalPrice: 149
+learn:
+  - "Integrate sustainability into marketing campaigns and communications"
+  - "Map and prioritise key stakeholders in B2B contexts"
+  - "Measure and communicate environmental and social impact"
+  - "Align marketing objectives with UN SDGs"
+  - "Develop actionable B2B strategies balancing profitability and purpose"
+  - "Explore case studies from space and technology sectors"
+curriculum:
+  - title: "Module 1: Introduction to Sustainable Marketing"
+    duration: "1 hour"
+    lessons:
+      - title: "Principles and Practices of Sustainable Marketing"
+        duration: "30 min"
+      - title: "Linking Marketing to Business and SDGs"
+        duration: "30 min"
+  - title: "Module 2: Stakeholder Mapping and Engagement"
+    duration: "1.5 hours"
+    lessons:
+      - title: "Identifying and Prioritising Stakeholders"
+        duration: "45 min"
+      - title: "Engagement Strategies for B2B Companies"
+        duration: "45 min"
+  - title: "Module 3: Measuring Impact & Communicating Value"
+    duration: "1.5 hours"
+    lessons:
+      - title: "Metrics and Reporting Tools"
+        duration: "45 min"
+      - title: "Case Studies: Sustainable Campaigns in Action"
+        duration: "45 min"
 
-# Product Details
-product_id: prod_SehcU2VvDBkBQr
-stripePriceId: price_1RjOHPE9V0wpcpD5hAbsQbyu
-product_tax_code: txcd_20060045
-marketing_feature_list:
-  - Basics of sustainable marketing principles and practices
-description: "A beginner-friendly introduction to sustainability principles in marketing."
-attributes: —
-statement_descriptor: INTROSMKTG
-custom_unit_label: workshops
-created_at: "2025-07-10"
-updated_at: "2025-07-11"
-metadata:
-  category: Training
-  tier: Starter
+learnColumns:
+  - ["Sustainability integration", "Stakeholder mapping", "Impact measurement"]
+  - ["B2B strategy development", "SDG alignment", "Case studies"]
+
+features:
+  - icon: "bi bi-check-circle"
+    text: "Hands-on workshop with practical exercises"
+  - icon: "bi bi-clock"
+    text: "Single-day intensive session"
+  - icon: "bi bi-award"
+    text: "Certificate of participation"
+
+info:
+  - label: "Prerequisites"
+    value: "None – suitable for all professionals"
+  - label: "Language"
+    value: "English"
+  - label: "Level"
+    value: "Beginner"
+  - label: "Duration"
+    value: "1 day / 4 hours"
+
+tabs:
+  - title: "Overview"
+    heading: "Workshop Overview"
+    italic: "Practical strategies to integrate sustainability into marketing."
+    content: "This workshop provides B2B teams with tools and frameworks to embed sustainability into campaigns, measure environmental and social impact, and map stakeholders effectively to drive responsible growth."
+    image: "/img/course/workshop-sustainable-marketing.webp"
+  - title: "Requirements"
+    heading: "What You Need"
+    content: "A laptop and willingness to engage in practical exercises."
+    image: "/img/course/workshop-sustainable-marketing.webp"
+  - title: "Outcomes"
+    heading: "Key Takeaways"
+    content: "Participants will leave with actionable frameworks, reporting tools, and strategies to implement sustainable marketing in their organisations, plus enhanced stakeholder engagement techniques."
+    image: "/img/course/workshop-sustainable-marketing.webp"
 ---
 
-**Green Orbit Digital** is proud to present the **Intro to Sustainable Marketing Workshop**, a focused B2B training session tailored for companies in the space and technology sectors. This workshop equips marketing and business development teams with practical tools to implement sustainable strategies that enhance brand reputation, reduce environmental impact, and drive long-term growth.
+## Workshop Overview
 
-## Workshop Objectives
+**Green Orbit Academy** presents the **Stakeholder Engagement Mapping Workshop**, a focused B2B training session designed for the space and technology sectors.  
 
 Participants will learn to:
 
-- Integrate sustainability into marketing campaigns and communication strategies.
-- Measure and communicate the environmental and social impact of business initiatives.
-- Align marketing objectives with UN Sustainable Development Goals (SDGs).
-- Develop actionable B2B strategies that balance profitability and purpose.
-- Explore case studies of successful sustainable campaigns in the space sector.
+- Integrate sustainability principles into marketing campaigns and communications  
+- Map and prioritise stakeholders for maximum engagement  
+- Measure and report environmental and social impact  
+- Align marketing activities with UN SDGs  
+- Develop actionable strategies balancing purpose and profitability  
 
-## Who Should Attend
+**Who Should Attend:**
 
-- Marketing managers and teams in B2B companies.
-- Sustainability officers and consultants.
-- Business leaders seeking to adopt responsible growth strategies.
-- Agencies supporting the space and tech sectors in their sustainability journey.
+- Marketing managers and teams in B2B companies  
+- Sustainability officers and consultants  
+- Business leaders seeking responsible growth strategies  
+- Agencies supporting the space and technology sectors  
 
-## Key Takeaways
+**Key Takeaways:**
 
-- A structured framework for implementing sustainable marketing practices.
-- Tools to measure impact and report to stakeholders.
-- Strategies for differentiating your brand through sustainability.
-- Networking with other professionals committed to ethical and sustainable business practices.
-
-> “At Green Orbit Digital, we believe sustainability is not optional—it’s a business imperative. This workshop empowers companies to innovate responsibly, improve stakeholder trust, and create a meaningful impact while achieving business goals.” – Ryan Laird, Director, Green Orbit Digital
-
-For more information and registration, visit [Green Orbit Digital Academy](https://greenorbit.space/news/intro-sustainable-marketing-b2b/).
+- Practical frameworks for sustainable marketing and stakeholder engagement  
+- Tools for impact measurement and reporting  
+- Case studies showcasing successful campaigns in the space sector  
+- Networking with peers committed to ethical and sustainable business practices  

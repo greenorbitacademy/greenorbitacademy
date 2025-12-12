@@ -1,6 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/Hero.astro';
+
+const workshops = await getCollection('workshops');
 ---
 
 <Layout
@@ -8,198 +10,73 @@ import Hero from '../../components/Hero.astro';
   description="Empowering the next generation of sustainable space leaders through expert-led training, practical tools, and interdisciplinary learning."
 >
   <main class="main index-page">
-    <!-- Hero Section -->
 
-<!-- Page Title -->
-<div class="page-title" data-aos="fade">
-  <div class="heading">
-    <div class="container">
-      <div class="row d-flex justify-content-center text-center">
-        <div class="col-lg-8">
-          <h1>Workshops</h1>
-          <p class="mb-0">
-            Our workshop series provides immersive, high-impact learning experiences designed to help teams communicate science clearly, innovate with confidence, and build strategic alignment. Delivered by Green Orbit Academy, each workshop blends practical exercises, expert facilitation, and real-world challenges to accelerate capability building across organisations.
-          </p>
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Workshops</h1>
+              <p class="mb-0">
+                Our workshop series provides immersive, high-impact learning experiences designed to help teams communicate science clearly, innovate with confidence, and build strategic alignment. Delivered by Green Orbit Academy, each workshop blends practical exercises, expert facilitation, and real-world challenges to accelerate capability building across organisations.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Workshops</li>
+          </ol>
+        </div>
+      </nav>
     </div>
-  </div>
 
-  <nav class="breadcrumbs">
-    <div class="container">
-      <ol>
-        <li><a href="index">Home</a></li>
-        <li class="current">Programmes</li>
-      </ol>
-    </div>
-  </nav>
-</div>
-<!-- End Page Title -->
+    <!-- Workshops Section -->
+    <section id="workshops" class="courses section">
+      <div class="container">
+        <div class="row">
+          {workshops.map((workshop, i) => (
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay={100 + i*100}>
+              <div class="course-item">
+                <img src={workshop.data.image ?? '/images/default-featured.jpg'} class="img-fluid" alt={workshop.data.title} />
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <p class="category">{workshop.data.category}</p>
+                  </div>
+                  <h3>
+                    <a href={`/workshops/${workshop.slug}`}>{workshop.data.title}</a>
+                  </h3>
+                  <p class="description">{workshop.data.description}</p>
 
-
-<!-- Workshops Section -->
-<section id="workshops" class="courses section">
-  <div class="container">
-    <div class="row">
-
-      <!-- Branding Strategy -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-        <div class="course-item">
-          <img src="../img/course/course-1.webp" class="img-fluid" alt="Branding Strategy">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Brand & Marketing</p>
-            </div>
-            <h3><a href="workshop-branding-strategy">Branding Strategy</a></h3>
-            <p class="description">
-              Learn to craft a compelling brand identity aligned with your organisation’s purpose. 
-              Covers positioning, visual identity, messaging frameworks, and storytelling for stronger market presence.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
+                  {workshop.data.instructor && (
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                      <div class="trainer-profile d-flex align-items-center">
+                        <img src={workshop.data.instructor.avatar ?? '/images/default-featured.jpg'} class="img-fluid" alt={workshop.data.instructor.name} />
+                        <a href="../trainers" class="trainer-link">{workshop.data.instructor.name}</a>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-      <!-- End Item -->
+    </section>
 
-      <!-- Sustainable Marketing -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-        <div class="course-item">
-          <img src="../img/course/course-2.webp" class="img-fluid" alt="Sustainable Marketing">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Marketing & Impact</p>
-            </div>
-            <h3><a href="workshop-sustainable-marketing">Sustainable Marketing</a></h3>
-            <p class="description">
-              Integrate sustainability principles into campaigns, communications, and brand development. 
-              Participants design strategies that enhance credibility while advancing environmental and social goals.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Sustainability Action Plan -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-        <div class="course-item">
-          <img src="../img/course/course-3.webp" class="img-fluid" alt="Sustainability Action Plan">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Strategy & Planning</p>
-            </div>
-            <h3><a href="workshop-sustainability-action-plan">Sustainability Action Plan</a></h3>
-            <p class="description">
-              Develop actionable sustainability strategies for your organisation. Covers assessment, goal setting, roadmap creation, 
-              and monitoring for measurable environmental and social impact.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Storytelling -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="400">
-        <div class="course-item">
-          <img src="../img/course/course-3.webp" class="img-fluid" alt="Storytelling">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Communications</p>
-            </div>
-            <h3><a href="workshop-storytelling">Storytelling</a></h3>
-            <p class="description">
-              Master the art of persuasive storytelling to engage stakeholders and audiences. 
-              Covers narrative design, framing complex ideas, and crafting impactful messages for science, technology, and policy sectors.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-      <!-- Campaign Planning -->
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="500">
-        <div class="course-item">
-          <img src="../img/course/course-2.webp" class="img-fluid" alt="Campaign Planning">
-          <div class="course-content">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <p class="category">Marketing Strategy</p>
-            </div>
-            <h3><a href="workshop-campaign-planning">Campaign Planning</a></h3>
-            <p class="description">
-              Learn to design, implement, and measure strategic campaigns. Includes audience analysis, messaging, 
-              channel strategy, and performance tracking to deliver high-impact results.
-            </p>
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Item -->
-
-<!-- Transition to Net Zero Workshop -->
-<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="700">
-  <div class="course-item">
-    <img src="../img/course/course-1.webp" class="img-fluid" alt="Transition to Net Zero">
-    <div class="course-content">
-      
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <p class="category">Sustainability</p>
-      </div>
-      
-      <h3><a href="workshop-net-zero">Transition to Net Zero – A Practical Guide for Businesses</a></h3>
-      <p class="description">
-        Equip your organisation with actionable strategies to reduce carbon emissions and align operations with global Net Zero targets. 
-        This workshop covers carbon footprint assessment, energy efficiency measures, sustainable supply chain management, and stakeholder engagement. 
-        Perfect for business leaders, sustainability managers, and ESG professionals looking to implement measurable climate action.
+    <!-- CTA Section -->
+    <div class="cta-box section-title" data-aos="fade-up">
+      <h2>Get in touch</h2>
+      <p>
+        Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
       </p>
-      
-            <div class="trainer d-flex justify-content-between align-items-center">
-              <div class="trainer-profile d-flex align-items-center">
-                <img src="../img/person/ryan.jpg" class="img-fluid" alt="">
-                <a href="../trainers" class="trainer-link">Ryan Laird</a>
-              </div>
-            </div>
+      <a href="contact" class="btn-getstarted"><strong>Contact Us</strong></a>
     </div>
-  </div>
-</div>
-<!-- End Transition to Net Zero Workshop -->
-    </div>
-  </div>
-</section>
-<!-- End Workshops Section -->
-<div class="cta-box section-title" data-aos="fade-up">
-  <h2>Get in touch</h2>
-  <p>
-    Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
-  </p>
-  <a href="contact" class="btn-getstarted"><strong>Contact Us</strong></a>
-</div>
 
   </main>
 </Layout>

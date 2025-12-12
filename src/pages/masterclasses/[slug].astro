@@ -1,0 +1,227 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CTA from '../../components/CTA.astro';
+
+// Generate static paths for masterclasses
+export async function getStaticPaths() {
+  const masterclasses = await getCollection('masterclasses');
+  return masterclasses.map(entry => ({
+    params: { slug: entry.slug },
+    props: { masterclass: entry.data, body: entry.body },
+  }));
+}
+
+const { masterclass, body } = Astro.props;
+const featured = masterclass.image ?? '/img/course-details-1.webp';
+---
+
+<Layout title={masterclass.title} description={masterclass.description}>
+  <main class="main index-page">
+
+    <!-- Page Title / Hero -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container text-center">
+          <h1>{masterclass.title}</h1>
+          <p class="mb-0">{masterclass.summary ?? masterclass.description}</p>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/masterclasses">Masterclasses</a></li>
+            <li class="current">{masterclass.title}</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Masterclass Details -->
+    <section id="course-details" class="course-details section">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+
+            <!-- Header -->
+            <div class="course-header mb-4">
+              <img src={featured} alt={masterclass.title} class="img-fluid mb-3" />
+
+              {masterclass.instructor && (
+                <div class="instructor d-flex align-items-center mb-3">
+                  <img src={masterclass.instructor.avatar ?? featured} alt={masterclass.instructor.name} class="instructor-avatar me-2" />
+                  <div>
+                    <h6>{masterclass.instructor.name}</h6>
+                    <span>{masterclass.instructor.role}</span>
+                  </div>
+                </div>
+              )}
+
+              <div class="course-meta d-flex gap-3 flex-wrap mb-4">
+                {masterclass.students !== undefined && <div><i class="bi bi-people"></i> {(masterclass.students).toLocaleString()} students</div>}
+                {masterclass.hours && <div><i class="bi bi-clock"></i> {masterclass.hours} hours</div>}
+                {masterclass.duration && <div><i class="bi bi-calendar"></i> {masterclass.duration}</div>}
+                {masterclass.level && <div><i class="bi bi-bar-chart"></i> {masterclass.level}</div>}
+                {masterclass.language && <div><i class="bi bi-globe"></i> {masterclass.language}</div>}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="course-content mb-4">
+              <div innerHTML={body}></div>
+
+              {masterclass.learn?.length && (
+                <div class="what-you-learn mb-4">
+                  <h3>What You'll Learn</h3>
+                  <div class="row">
+                    {masterclass.learnColumns?.length
+                      ? masterclass.learnColumns.map((col, i) => (
+                          <div class="col-md-6" key={i}>
+                            <ul class="learn-list">
+                              {col.map(item => <li><i class="bi bi-check-circle"></i> {item}</li>)}
+                            </ul>
+                          </div>
+                        ))
+                      : <div class="col-12">
+                          <ul class="learn-list">
+                            {masterclass.learn.map(item => <li><i class="bi bi-check-circle"></i> {item}</li>)}
+                          </ul>
+                        </div>
+                    }
+                  </div>
+                </div>
+              )}
+
+{masterclass.curriculum?.length && (
+  <div class="course-curriculum" data-aos="fade-up" data-aos-delay="400">
+    <h3>Course Curriculum</h3>
+
+    {masterclass.curriculum.map((module) => (
+      <div class="curriculum-section">
+        <div class="section-header">
+          <h4>{module.title}</h4>
+          <span class="lessons-count">{module.lessons?.length ?? 0} lessons • {module.duration}</span>
+        </div>
+        <div class="lessons">
+          {module.lessons?.map((lesson) => (
+            <div class="lesson-item">
+              <div class="lesson-info">
+                <i class={`bi ${lesson.icon ?? 'bi-play-circle'}`}></i>
+                <span>{lesson.title}</span>
+              </div>
+              {lesson.duration && <span class="lesson-duration">{lesson.duration}</span>}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <aside class="course-sidebar">
+
+              <!-- Pricing -->
+              {masterclass.price !== undefined && (
+                <div class="pricing-card mb-4">
+                  <div class="price">
+                    <span class="currency">£</span>
+                    <span class="amount">{masterclass.price}</span>
+                    <span class="period">/masterclass</span>
+                  </div>
+                  {masterclass.originalPrice && <div class="original-price">£{masterclass.originalPrice}</div>}
+                  {masterclass.features?.length && (
+                    <ul class="course-features list-unstyled mt-2">
+                      {masterclass.features.map(f => <li key={f.text}><i class={f.icon}></i> {f.text}</li>)}
+                    </ul>
+                  )}
+                  {masterclass.enrollUrl && <a class="btn-enroll mt-3" href={masterclass.enrollUrl}>Enroll Now</a>}
+                  {masterclass.previewUrl && <a class="btn-preview mt-2" href={masterclass.previewUrl}>Preview Course</a>}
+                </div>
+              )}
+
+              {/* Course Info */}
+              {masterclass.info?.length && (
+                <div class="course-info-card mb-4">
+                  <h4>Course Information</h4>
+                  {masterclass.info.map(item => (
+                    <div class="info-item" key={item.label}>
+                      <span class="label">{item.label}</span>
+                      <span class="value">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Tags */}
+              {masterclass.tags?.length && (
+                <div class="course-tags mb-4">
+                  <h4>Tags</h4>
+                  <div class="tags-list d-flex flex-wrap gap-1">
+                    {masterclass.tags.map(tag => <span key={tag} class="tag badge background-color">{tag}</span>)}
+                  </div>
+                </div>
+              )}
+
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    {masterclass.tabs?.length && (
+      <section id="tabs" class="tabs section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                {masterclass.tabs.map((tab, i) => (
+                  <li class="nav-item" key={i}>
+                    <a class={`nav-link ${i === 0 ? 'active show' : ''}`} data-bs-toggle="tab" href={`#tab-${i+1}`}>{tab.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+              <div class="tab-content">
+                {masterclass.tabs.map((tab, i) => (
+                  <div class={`tab-pane ${i === 0 ? 'active show' : ''}`} id={`tab-${i+1}`} key={i}>
+                    <div class="row">
+                      <div class="col-lg-8 details order-2 order-lg-1">
+                        {tab.heading && <h3>{tab.heading}</h3>}
+                        {tab.italic && <p class="fst-italic">{tab.italic}</p>}
+                        {tab.content && <p>{tab.content}</p>}
+                      </div>
+                      {tab.image && (
+                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                          <img src={tab.image} alt="" class="img-fluid" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- CTA -->
+    {masterclass.cta && (
+      <div class="cta-box section-title" data-aos="fade-up">
+        <h2>{masterclass.cta.heading}</h2>
+        <p>{masterclass.cta.text}</p>
+        {masterclass.cta.url && <a href={masterclass.cta.url} class="btn-getstarted"><strong>{masterclass.cta.buttonText ?? 'Get Started'}</strong></a>}
+      </div>
+    )}
+  <CTA/>
+  </main>
+</Layout>

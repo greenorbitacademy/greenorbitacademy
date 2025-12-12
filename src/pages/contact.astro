@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
 ---
 
 <Layout title="Contact | Green Orbit Academy">
@@ -7,26 +8,30 @@ import Layout from '../layouts/Layout.astro';
   <main class="main">
 
     <!-- Page Title -->
-    <section class="page-title" data-aos="fade">
-      <div class="container text-center">
-        <h1>Get in Touch</h1>
-        <p>
-          Have questions or want to discuss how Green Orbit Academy can support your team’s growth?
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Get in Touch</h1>
+              <p class="mb-0">
+                Have questions or want to discuss how Green Orbit Academy can support your team’s growth?
           Our team is ready to provide guidance on courses, workshops, masterclasses, and tailored training programmes.
           Reach out today to start a conversation about professional development, sustainability, and digital transformation in your organisation.
-        </p>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Breadcrumbs -->
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="current">Contact</li>
           </ol>
         </div>
       </nav>
-    </section>
+    </div>
 
     <!-- Google Map -->
     <section class="map mb-5" data-aos="fade-up" data-aos-delay="200">
@@ -100,100 +105,9 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta-box section-title text-center" data-aos="fade-up">
-      <h2>Get in touch</h2>
-      <p>
-        Explore how Green Orbit Academy can support your professional development or organisational capability building.
-        Connect with us to discuss learning opportunities tailored to your needs.
-      </p>
-      <a href="contact.html" class="btn-getstarted"><strong>Contact Us</strong></a>
-    </section>
+<CTA/>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="footer position-relative light-background">
-    <div class="container footer-top">
-      <div class="row gy-4">
-
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Green Orbit Academy</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Leicester, United Kingdom</p>
-            <p><strong>Phone:</strong> +44 116 483 0155</p>
-            <p><strong>Email:</strong> hello@greenorbit.academy</p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href="https://facebook.com/greenorbit.academy"><i class="bi bi-facebook"></i></a>
-            <a href="https://instagram.com/greenorbit.academy"><i class="bi bi-instagram"></i></a>
-            <a href="https://linkedin.com/company/greenorbit.academy"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="terms.html">Terms of service</a></li>
-            <li><a href="privacy-policy.html">Privacy policy</a></li>
-            <li><a href="cookie-policy.html">Cookie policy</a></li>
-            <li><a href="accessibility.html">Accessibility</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Other Sites</h4>
-          <ul>
-            <li><a href="https://impactorbit.co">Impact Orbit Creative Group</a></li>
-            <li><a href="https://greenorbit.space">Green Orbit Space Communications & PR</a></li>
-            <li><a href="https://greenorbit.digital">Green Orbit Digital</a></li>
-            <li><a href="https://spaceintegrity.org">Space Integrity Initiative</a></li>
-            <li><a href="https://spaceimpactforum.com">Space Impact Forum</a></li>
-            <li><a href="https://leicesterspaceweek.com">Leicester Space Week</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="/forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form">
-              <input type="email" name="email">
-              <input type="submit" value="Subscribe">
-            </div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Impact Orbit Creative Group</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="/vendor/php-email-form/validate.js" is:inline></script>
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:inline></script>
-  <script src="/assets/vendor/aos/aos.js" is:inline></script>
-  <script src="/assets/vendor/glightbox/js/glightbox.min.js" is:inline></script>
-  <script src="/assets/vendor/purecounter/purecounter_vanilla.js" is:inline></script>
-  <script src="/assets/vendor/swiper/swiper-bundle.min.js" is:inline></script>
-
-  <!-- Main JS File -->
-  <script src="/assets/js/main.js" is:inline></script>
 
 </Layout>
