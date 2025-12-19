@@ -1,0 +1,37 @@
+name: Accessibility Audit (WCAG 2.2 AA)
+description: Ensure inclusive and accessible web experiences
+title: "[Accessibility] WCAG 2.2 AA compliance audit"
+labels:
+  - accessibility
+  - compliance
+body:
+  - type: checklist
+    id: automated
+    attributes:
+      label: Automated checks
+      options:
+        - label: Lighthouse accessibility audit
+        - label: Axe or equivalent scan completed
+
+  - type: checklist
+    id: manual
+    attributes:
+      label: Manual checks
+      options:
+        - label: Keyboard navigation
+        - label: Colour contrast
+        - label: Semantic HTML
+        - label: ARIA usage validated
+
+  - type: checklist
+    id: outcomes
+    attributes:
+      label: Outcomes
+      options:
+        - label: No critical or serious issues remain
+        - label: Accessibility statement published
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Accessibility notes

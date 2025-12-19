@@ -1,0 +1,27 @@
+name: Website Carbon Measurement
+description: Measure and track website carbon emissions
+title: "[Sustainability] Measure website carbon footprint"
+labels:
+  - sustainability
+  - impact
+  - reporting
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Establish a repeatable method for measuring and reporting website carbon emissions.
+
+  - type: checklist
+    id: measurement
+    attributes:
+      label: Measurement setup
+      options:
+        - label: Baseline carbon measurement completed
+        - label: Measurement methodology documented
+        - label: Metrics storage location defined
+        - label: Review cadence agreed
+
+  - type: textarea
+    id: methodology
+    attributes:
+      label: Methodology and assumptions

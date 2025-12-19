@@ -1,0 +1,30 @@
+name: Analytics & Privacy Review
+description: Review analytics implementation and privacy compliance
+title: "[Compliance] Analytics and privacy audit"
+labels:
+  - privacy
+  - analytics
+  - compliance
+body:
+  - type: checklist
+    id: analytics
+    attributes:
+      label: Analytics
+      options:
+        - label: Analytics tooling confirmed
+        - label: Event tracking reviewed
+        - label: Unnecessary tracking removed
+
+  - type: checklist
+    id: privacy
+    attributes:
+      label: Privacy & compliance
+      options:
+        - label: Cookie usage reviewed
+        - label: Cookie consent implemented
+        - label: Privacy policy updated
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Compliance notes

@@ -1,0 +1,35 @@
+name: Sustainable Web Design
+description: Reduce environmental impact through sustainable web practices
+title: "[Sustainability] Implement sustainable web design principles"
+labels:
+  - sustainability
+  - performance
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue focuses on reducing page weight, energy consumption, and unnecessary resource usage.
+
+  - type: checklist
+    id: optimisation
+    attributes:
+      label: Optimisation actions
+      options:
+        - label: Image optimisation (compression, responsive sizes, modern formats)
+        - label: JavaScript payload reduced
+        - label: Unused CSS removed
+        - label: Caching and compression enabled
+
+  - type: checklist
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: Page weight meets agreed threshold
+        - label: Lighthouse performance baseline met
+        - label: Sustainability decisions documented
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Sustainability impact notes

@@ -1,0 +1,22 @@
+name: Technical SEO Baseline
+description: Ensure site is technically optimised for search
+title: "[SEO] Technical SEO baseline review"
+labels:
+  - seo
+  - discoverability
+body:
+  - type: checklist
+    id: seo
+    attributes:
+      label: SEO checks
+      options:
+        - label: Meta titles and descriptions verified
+        - label: Canonical URLs correct
+        - label: Sitemap.xml present
+        - label: Robots.txt reviewed
+        - label: Structured data implemented where relevant
+
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings and actions

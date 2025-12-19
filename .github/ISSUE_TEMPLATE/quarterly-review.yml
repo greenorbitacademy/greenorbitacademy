@@ -1,0 +1,22 @@
+name: Quarterly Website Health Review
+description: Recurring review of website health and impact
+title: "[Review] Quarterly website health review"
+labels:
+  - review
+  - continuous-improvement
+body:
+  - type: checklist
+    id: review
+    attributes:
+      label: Review areas
+      options:
+        - label: Performance
+        - label: Accessibility
+        - label: Sustainability metrics
+        - label: Content effectiveness
+        - label: Security and compliance
+
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Outcomes and follow-up actions

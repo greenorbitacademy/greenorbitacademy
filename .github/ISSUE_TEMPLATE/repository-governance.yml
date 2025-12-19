@@ -1,0 +1,38 @@
+name: Repository Governance & Standards
+description: Establish baseline repository standards, documentation, and governance
+title: "[Governance] Establish repository standards"
+labels:
+  - governance
+  - documentation
+  - technical-debt
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue ensures the repository meets organisational governance, quality, and sustainability standards.
+
+  - type: checklist
+    id: governance-baseline
+    attributes:
+      label: Repository baseline
+      options:
+        - label: README.md updated (purpose, stack, deployment, sustainability notes)
+        - label: LICENSE present
+        - label: CONTRIBUTING.md present
+        - label: CODE_OF_CONDUCT.md present
+        - label: Issue and PR templates configured
+
+  - type: checklist
+    id: workflow
+    attributes:
+      label: Workflow and governance
+      options:
+        - label: Branch strategy defined
+        - label: Review and approval process documented
+        - label: Ownership clearly assigned
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional governance considerations or decisions

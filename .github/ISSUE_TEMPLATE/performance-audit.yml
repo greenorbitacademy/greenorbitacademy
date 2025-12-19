@@ -1,0 +1,29 @@
+name: Performance Audit & Optimisation
+description: Improve performance and Core Web Vitals
+title: "[Performance] Audit and optimise site performance"
+labels:
+  - performance
+  - technical-debt
+body:
+  - type: checklist
+    id: audit
+    attributes:
+      label: Performance audit
+      options:
+        - label: Lighthouse audit completed
+        - label: Core Web Vitals reviewed (LCP, CLS, INP)
+        - label: Render-blocking resources addressed
+
+  - type: checklist
+    id: optimisation
+    attributes:
+      label: Optimisation actions
+      options:
+        - label: Fonts optimised
+        - label: Images lazy-loaded and optimised
+        - label: Scripts deferred or removed
+
+  - type: textarea
+    id: results
+    attributes:
+      label: Results and improvements

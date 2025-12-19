@@ -1,0 +1,30 @@
+name: Security & Resilience Review
+description: Review security posture and recovery processes
+title: "[Security] Security hardening and resilience review"
+labels:
+  - security
+  - resilience
+body:
+  - type: checklist
+    id: security
+    attributes:
+      label: Security checks
+      options:
+        - label: HTTPS enforced
+        - label: Security headers reviewed
+        - label: Dependency vulnerabilities addressed
+        - label: Forms and inputs audited
+
+  - type: checklist
+    id: recovery
+    attributes:
+      label: Backup & recovery
+      options:
+        - label: Backup process confirmed
+        - label: Recovery process tested
+        - label: Recovery documentation updated
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and mitigations

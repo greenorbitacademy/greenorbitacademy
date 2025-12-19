@@ -1,0 +1,21 @@
+name: CI/CD Pipeline Review
+description: Review or implement CI/CD pipelines
+title: "[Automation] CI/CD pipeline setup or review"
+labels:
+  - automation
+  - devops
+body:
+  - type: checklist
+    id: pipeline
+    attributes:
+      label: Pipeline checks
+      options:
+        - label: Linting enabled
+        - label: Build checks configured
+        - label: Tests running on PRs
+        - label: Deployment automated
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Pipeline notes
