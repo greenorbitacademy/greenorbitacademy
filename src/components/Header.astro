@@ -10,13 +10,15 @@
     </a>
 
     <!-- Navigation -->
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" aria-label="Main Navigation">
       <ul>
         <li><a href="/" class="active">Home</a></li>
 
         <li class="dropdown">
-          <a href="/about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
+          <a href="/about" aria-haspopup="true" aria-expanded="false">
+            <span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul class="dropdown-menu">
             <li><a href="/trainers">Trainers</a></li>
             <li><a href="/pricing">Pricing</a></li>
           </ul>
@@ -25,8 +27,10 @@
         <li><a href="/webinars">Webinars</a></li>
 
         <li class="dropdown">
-          <a href="#"><span>CPD</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
+          <a href="#" aria-haspopup="true" aria-expanded="false">
+            <span>CPD</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul class="dropdown-menu">
             <li><a href="/courses">Courses</a></li>
             <li><a href="/workshops">Workshops</a></li>
             <li><a href="/masterclasses">Masterclasses</a></li>
@@ -36,7 +40,10 @@
       </ul>
 
       <!-- Mobile toggle button -->
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <button class="mobile-nav-toggle d-xl-none" aria-controls="navmenu" aria-expanded="false">
+        <i class="bi bi-list"></i>
+        <span class="visually-hidden">Toggle navigation</span>
+      </button>
     </nav>
 
     <!-- Contact button -->
@@ -45,15 +52,45 @@
   </div>
 </header>
 
+<style>
+/* Smooth dropdown transitions */
+.navmenu .dropdown-menu {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 0;
+  list-style: none;
+}
+
+.navmenu .dropdown-active {
+  display: block;
+  max-height: 500px; /* Adjust based on content */
+}
+
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow-y: auto;
+  padding-top: 70px; /* adjust for header height */
+  z-index: 999;
+}
+</style>
+
 <script>
-  // Mobile menu toggle
   const mobileToggle = document.querySelector('.mobile-nav-toggle');
   const navmenu = document.getElementById('navmenu');
 
+  // Toggle mobile menu
   mobileToggle.addEventListener('click', () => {
     navmenu.classList.toggle('navbar-mobile');
-    mobileToggle.classList.toggle('bi-list');
-    mobileToggle.classList.toggle('bi-x');
+    mobileToggle.setAttribute('aria-expanded', navmenu.classList.contains('navbar-mobile'));
+    mobileToggle.querySelector('i').classList.toggle('bi-list');
+    mobileToggle.querySelector('i').classList.toggle('bi-x');
   });
 
   // Dropdown toggle for mobile
@@ -61,18 +98,21 @@
     el.addEventListener('click', function (e) {
       if (navmenu.classList.contains('navbar-mobile')) {
         e.preventDefault();
-        this.nextElementSibling.classList.toggle('dropdown-active');
+        const dropdown = this.nextElementSibling;
+        const expanded = dropdown.classList.toggle('dropdown-active');
+        this.setAttribute('aria-expanded', expanded);
       }
     });
   });
 
-  // Close mobile menu on link click
-  document.querySelectorAll('#navmenu a').forEach(link => {
+  // Close mobile menu when clicking outside or on link (optional)
+  document.querySelectorAll('#navmenu a:not(.toggle-dropdown)').forEach(link => {
     link.addEventListener('click', () => {
       if (navmenu.classList.contains('navbar-mobile')) {
         navmenu.classList.remove('navbar-mobile');
-        mobileToggle.classList.add('bi-list');
-        mobileToggle.classList.remove('bi-x');
+        mobileToggle.setAttribute('aria-expanded', false);
+        mobileToggle.querySelector('i').classList.add('bi-list');
+        mobileToggle.querySelector('i').classList.remove('bi-x');
       }
     });
   });
