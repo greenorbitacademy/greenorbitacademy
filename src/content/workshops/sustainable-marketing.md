@@ -3,7 +3,7 @@ title: "Sustainable Marketing"
 slug: "sustainable-marketing"
 description: "Integrate sustainability principles into campaigns, communications, and brand development. Participants design strategies that enhance credibility while advancing environmental and social goals."
 summary: "Our Masterclass on full-stack web development using JS, React, and Node.js."
-image: "/img/course/course-details-1.webp"
+image: "/img/workshops/sustainable-marketing.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

@@ -3,7 +3,7 @@ title: "Transition to Net Zero – A Practical Guide for Businesses"
 slug: "transition-to-net-zero"
 description: "Equip your organisation with actionable strategies to reduce carbon emissions and align operations with global Net Zero targets."
 summary: "A hands-on masterclass guiding businesses through practical Net Zero strategies, carbon management, and sustainable operations."
-image: "/img/course/course-net-zero.webp"
+image: "/img/workshops/net-zero.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

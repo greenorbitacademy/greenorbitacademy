@@ -3,7 +3,7 @@ title: "Campaign Planning Masterclass"
 slug: "campaign-planning"
 description: "Learn to design, implement, and measure strategic campaigns. Focus on audience analysis, messaging, channel strategy, and performance tracking to deliver high-impact results."
 summary: "A practical masterclass for planning, executing, and optimising high-performance campaigns."
-image: "/img/course/course-campaign-planning.webp"
+image: "/img/masterclasses/campaign.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

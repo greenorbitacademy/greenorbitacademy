@@ -3,7 +3,7 @@ title: "Communications Excellence Masterclass"
 slug: "communications-excellence"
 description: "A masterclass for leaders, spokespeople, and communication professionals to communicate with clarity, authority, and impact. Covers message architecture, strategic storytelling, media engagement, and executive presence, tailored for science, technology, policy, and innovation sectors."
 summary: "Develop executive-level communication skills for strategic influence and stakeholder engagement."
-image: "/img/course/course-communications.webp"
+image: "/img/masterclasses/communications.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

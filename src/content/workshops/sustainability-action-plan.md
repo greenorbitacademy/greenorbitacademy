@@ -3,7 +3,7 @@ title: "Sustainability Action Plan"
 slug: "sustainability-action-plan"
 description: "Develop actionable sustainability strategies for your organisation. Covers assessment, goal setting, roadmap creation, and monitoring for measurable environmental and social impact."
 summary: "A practical masterclass for creating and implementing organisational sustainability strategies."
-image: "/img/course/course-sustainability-action-plan.webp"
+image: "/img/workshops/sustainability-action.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

@@ -3,7 +3,7 @@ title: "Strategic Storytelling Masterclass"
 slug: "strategic-storytelling"
 description: "Master persuasive storytelling to engage stakeholders and audiences. Learn narrative design, framing complex ideas, and crafting compelling messages for science, technology, and policy sectors."
 summary: "A hands-on masterclass for creating narratives that drive engagement and influence decision-making."
-image: "/img/course/course-storytelling.webp"
+image: "/img/masterclasses/storytelling.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

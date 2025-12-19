@@ -3,7 +3,7 @@ title: "Space & Sustainability"
 slug: "space-and-sustainability"
 description: "A specialist masterclass exploring the rapidly evolving intersection between the space sector, climate action, ESG standards, and sustainability strategy. Participants gain insights into environmental reporting for space missions, sustainable space operations, and leveraging space technology for terrestrial sustainability challenges. Perfect for industry leaders, engineers, investors, and policymakers."
 summary: "Our Masterclass on the strategic integration of space technology and sustainability practices for modern organisations."
-image: "/img/course/course-space-sustainability.webp"
+image: "/img/masterclasses/space-sustainability.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"

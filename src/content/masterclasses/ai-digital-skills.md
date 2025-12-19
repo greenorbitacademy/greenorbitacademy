@@ -3,7 +3,7 @@ title: "AI & Digital Skills"
 slug: "ai-digital-skills"
 description: "An advanced masterclass equipping teams with practical AI fluency and digital transformation capabilities. Covers AI productivity tools, data-informed decision making, automation workflows, digital ethics, and human-centred design. Tailored for organisations modernising their operations and upskilling their workforce."
 summary: "Master practical AI and digital skills to transform workflows, improve decision-making, and leverage emerging technologies responsibly."
-image: "/img/course/course-ai-digital-skills.webp"
+image: "/img/masterclasses/ai-digital-skills.png"
 instructor:
   name: "Ryan Laird"
   role: "Founder & Director"
