@@ -52,68 +52,39 @@
   </div>
 </header>
 
-<style>
-/* Smooth dropdown transitions */
-.navmenu .dropdown-menu {
-  display: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding-left: 0;
-  list-style: none;
-}
+<script type="module">
+const mobileToggle = document.querySelector('.mobile-nav-toggle');
+const navmenu = document.getElementById('navmenu');
 
-.navmenu .dropdown-active {
-  display: block;
-  max-height: 500px; /* Adjust based on content */
-}
+// Toggle mobile menu
+mobileToggle.addEventListener('click', () => {
+  navmenu.classList.toggle('navbar-mobile');
+  mobileToggle.setAttribute('aria-expanded', navmenu.classList.contains('navbar-mobile'));
+  mobileToggle.querySelector('i').classList.toggle('bi-list');
+  mobileToggle.querySelector('i').classList.toggle('bi-x');
+});
 
-.navbar-mobile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  overflow-y: auto;
-  padding-top: 70px; /* adjust for header height */
-  z-index: 999;
-}
-</style>
-
-<script>
-  const mobileToggle = document.querySelector('.mobile-nav-toggle');
-  const navmenu = document.getElementById('navmenu');
-
-  // Toggle mobile menu
-  mobileToggle.addEventListener('click', () => {
-    navmenu.classList.toggle('navbar-mobile');
-    mobileToggle.setAttribute('aria-expanded', navmenu.classList.contains('navbar-mobile'));
-    mobileToggle.querySelector('i').classList.toggle('bi-list');
-    mobileToggle.querySelector('i').classList.toggle('bi-x');
+// Dropdown toggle for mobile
+document.querySelectorAll('.navmenu .dropdown > a').forEach(el => {
+  el.addEventListener('click', function (e) {
+    if (navmenu.classList.contains('navbar-mobile')) {
+      e.preventDefault();
+      const dropdown = this.nextElementSibling;
+      const expanded = dropdown.classList.toggle('dropdown-active');
+      this.setAttribute('aria-expanded', expanded);
+    }
   });
+});
 
-  // Dropdown toggle for mobile
-  document.querySelectorAll('.navmenu .dropdown > a').forEach(el => {
-    el.addEventListener('click', function (e) {
-      if (navmenu.classList.contains('navbar-mobile')) {
-        e.preventDefault();
-        const dropdown = this.nextElementSibling;
-        const expanded = dropdown.classList.toggle('dropdown-active');
-        this.setAttribute('aria-expanded', expanded);
-      }
-    });
+// Close mobile menu when clicking links
+document.querySelectorAll('#navmenu a:not(.toggle-dropdown)').forEach(link => {
+  link.addEventListener('click', () => {
+    if (navmenu.classList.contains('navbar-mobile')) {
+      navmenu.classList.remove('navbar-mobile');
+      mobileToggle.setAttribute('aria-expanded', false);
+      mobileToggle.querySelector('i').classList.add('bi-list');
+      mobileToggle.querySelector('i').classList.remove('bi-x');
+    }
   });
-
-  // Close mobile menu when clicking outside or on link (optional)
-  document.querySelectorAll('#navmenu a:not(.toggle-dropdown)').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navmenu.classList.contains('navbar-mobile')) {
-        navmenu.classList.remove('navbar-mobile');
-        mobileToggle.setAttribute('aria-expanded', false);
-        mobileToggle.querySelector('i').classList.add('bi-list');
-        mobileToggle.querySelector('i').classList.remove('bi-x');
-      }
-    });
-  });
+});
 </script>
