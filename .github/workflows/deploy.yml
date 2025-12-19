@@ -14,22 +14,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2. Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies (if package.json exists)
+      # 3. Install dependencies if package.json exists
+      - name: Install dependencies
         run: |
           if [ -f package.json ]; then
+            echo "package.json found → Installing dependencies"
             npm ci
+          else
+            echo "No package.json found → Skipping npm install"
           fi
 
-      - name: Build or copy files
+      # 4. Build site or copy static files
+      - name: Build site or copy static files
         run: |
+          # Clean previous output
           rm -rf dist
           mkdir dist
 
@@ -38,6 +46,7 @@ jobs:
             npm run build
           else
             echo "Static site detected → Copying files"
+            # Copy everything except dist/, .git/, .github/
             find . -maxdepth 1 \
               ! -name "dist" \
               ! -name ".git" \
@@ -46,12 +55,13 @@ jobs:
               -exec cp -R {} dist/ \;
           fi
 
-          # Ensure .nojekyll exists for Astro
+          # Add .nojekyll to prevent Jekyll processing
           touch dist/.nojekyll
 
           echo "Dist directory contents:"
           ls -al dist
 
+      # 5. Upload artifact for Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -62,8 +72,10 @@ jobs:
     needs: build
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      # 6. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
