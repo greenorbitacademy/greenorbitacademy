@@ -1,21 +1,21 @@
 {
-  "name": "green-orbit-digital",
+  "name": "greenorbitacademy",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Sustainable digital marketing site for the space sector by Green Orbit Digital",
   "author": "Ryan Laird",
   "license": "MIT",
-  "homepage": "https://greenorbit.space",
+  "homepage": "https://greenorbit.academy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greenorbitspace/greenorbitspace.git"
+    "url": "https://github.com/greenorbitacademy/greenorbitacademy.git"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "postbuild": "echo 'greenorbit.space' > dist/CNAME",
+    "postbuild": "echo 'greenorbit.academy' > dist/CNAME",
     "deploy": "npm run build && npm run postbuild && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
