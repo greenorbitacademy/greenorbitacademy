@@ -1,0 +1,12 @@
+[
+  { "name": "SEO", "color": "0E8A16", "description": "Search engine optimisation" },
+  { "name": "Schema", "color": "1D76DB", "description": "Structured data and schema markup" },
+  { "name": "enhancement", "color": "A2EEEF", "description": "New feature or improvement" },
+  { "name": "task", "color": "C2E0C6", "description": "Implementation task" },
+  { "name": "decision", "color": "FBCA04", "description": "Decision required" },
+  { "name": "content", "color": "D4C5F9", "description": "Content-related work" },
+  { "name": "UI", "color": "F9D0C4", "description": "User interface / design" },
+  { "name": "feature", "color": "5319E7", "description": "Functional feature" },
+  { "name": "Performance", "color": "BFDADC", "description": "Speed and performance improvements" },
+  { "name": "Social", "color": "E99695", "description": "Social sharing and metadata" }
+]

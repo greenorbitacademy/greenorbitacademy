@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Add Website schema",
+    "body": "Implement JSON-LD Website structured data on the homepage to improve search engine understanding of the brand and website structure.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add Organization schema",
+    "body": "Include Organization structured data to clarify official entity information (name, logo, contact info, social links) for search engines.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add LocalBusiness schema",
+    "body": "Include LocalBusiness structured data with address, phone, and opening hours (if applicable) to enhance local search visibility.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add Event schema",
+    "body": "Add JSON-LD Event schema for any upcoming events or courses to improve visibility in search engine results.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add Person schema",
+    "body": "Include Person or Professional structured data for key staff, instructors, or speakers to enhance search knowledge panels.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add FAQPage schema",
+    "body": "Implement FAQPage structured data on FAQs or help pages to enable rich results in search engines.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add Breadcrumb schema",
+    "body": "Implement breadcrumb structured data on all pages to improve navigation display and search engine understanding.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add Article/CreativeWork schema",
+    "body": "Include Article, ScholarlyArticle, or CreativeWork structured data for blog posts, white papers, research content, or media to improve indexing.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  },
+  {
+    "title": "Add Open Graph and Twitter Card metadata",
+    "body": "Include Open Graph and Twitter Card metadata on all pages to improve social sharing previews and engagement.",
+    "labels": ["enhancement", "SEO", "Social"]
+  },
+  {
+    "title": "Optimize meta titles and descriptions",
+    "body": "Review and update meta titles and descriptions across all pages to improve SEO performance and click-through rates.",
+    "labels": ["task", "SEO"]
+  },
+  {
+    "title": "Implement canonical URLs",
+    "body": "Ensure every page has a canonical URL to avoid duplicate content issues and consolidate SEO value.",
+    "labels": ["task", "SEO"]
+  },
+  {
+    "title": "Improve heading structure (H1-H6)",
+    "body": "Review all pages to ensure proper H1-H6 hierarchy for better SEO and accessibility.",
+    "labels": ["task", "SEO"]
+  },
+  {
+    "title": "Audit internal linking",
+    "body": "Check internal links across all pages to ensure proper link structure, anchor text relevance, and crawlability for SEO.",
+    "labels": ["task", "SEO"]
+  },
+  {
+    "title": "Check page speed and performance",
+    "body": "Audit page load speed, image optimization, and caching to improve SEO and user experience.",
+    "labels": ["task", "SEO", "Performance"]
+  },
+  {
+    "title": "Add structured data for media pages",
+    "body": "Include NewsArticle, PressRelease, or VideoObject schema for media and press pages to enhance search visibility.",
+    "labels": ["enhancement", "SEO", "Schema"]
+  }
+]
