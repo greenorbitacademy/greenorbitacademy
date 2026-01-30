@@ -1,10 +1,72 @@
 ---
+import fs from 'fs';
+import path from 'path';
+import ical from 'ical';
 import Layout from '../layouts/Layout.astro';
-import CTA from '../components/CTA.astro';
+
+// Read local ICS file
+const icsPath = path.resolve('./src/data/events.ics');
+const icsData = fs.readFileSync(icsPath, 'utf-8');
+
+// Parse ICS
+const parsed = ical.parseICS(icsData);
+
+// Function to format date
+function formatEventDate(start, end) {
+  const optionsDate = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+  const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'GMT' };
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+
+  const dayString = startDate.toLocaleDateString('en-GB', optionsDate);
+  const startTime = startDate.toLocaleTimeString('en-GB', optionsTime);
+  const endTime = endDate.toLocaleTimeString('en-GB', optionsTime);
+
+  return `${dayString}\n${startTime} - ${endTime} GMT`;
+}
+
+// Map VEVENTs to events array safely
+const events = Object.values(parsed)
+  .filter(event => event.type === 'VEVENT')
+  .sort((a, b) => new Date(a.start) - new Date(b.start))
+  .map((event, index) => {
+    // Extract organizer name safely
+    let organizerName = 'Ryan Laird';
+    if (event.organizer) {
+      if (typeof event.organizer === 'string') {
+        organizerName = event.organizer.replace(/^CN=/, '') || 'Ryan Laird';
+      } else if (event.organizer.params && event.organizer.params.CN) {
+        organizerName = event.organizer.params.CN;
+      } else if (event.organizer.val) {
+        organizerName = event.organizer.val.replace(/^CN=/, '') || 'Ryan Laird';
+      }
+    }
+
+    // Generate placeholder image URL per event
+    const imageUrl = `https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/event-${index + 1}.png`;
+
+    return {
+      slug: event.uid,
+      data: {
+        title: event.summary,
+        description: event.description?.replace(/\n/g, ' ') ?? '',
+        image: imageUrl,
+        category: 'Webinar',
+        start: event.start,
+        end: event.end,
+        dateString: formatEventDate(event.start, event.end),
+        instructor: {
+          name: organizerName,
+          avatar: imageUrl
+        },
+        url: event.location || '#'
+      }
+    };
+  });
 ---
 
 <Layout
-  title="Green Orbit Academy"
+  title="Green Orbit Academy – Webinars"
   description="Empowering the next generation of sustainable space leaders through expert-led training, practical tools, and interdisciplinary learning."
 >
   <main class="main index-page">
@@ -17,12 +79,14 @@ import CTA from '../components/CTA.astro';
             <div class="col-lg-8">
               <h1>Webinars</h1>
               <p class="mb-0">
-                Our training series provides immersive, high-impact learning experiences designed to help teams communicate science clearly, innovate with confidence, and build strategic alignment. Delivered by Green Orbit Academy, each training blends practical exercises, expert facilitation, and real-world challenges to accelerate capability building across organisations.
+                Join our live and on-demand webinars exploring sustainability, integrity, and impact across the space sector. Each session provides actionable insights, practical tools, and expert guidance for emerging leaders.
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Breadcrumbs -->
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
@@ -33,12 +97,64 @@ import CTA from '../components/CTA.astro';
       </nav>
     </div>
 
-    <!-- Webinar Section -->
-    <section id="Webinars" class="webinars section">
+    <!-- Webinars Section -->
+    <section id="courses" class="courses section">
       <div class="container">
-        <p>webinar</p>
+        <div class="row">
+          {events.map((event, i) => (
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+              data-aos="zoom-in"
+              data-aos-delay={100 + i * 100}
+            >
+              <div class="course-item">
+                <div class="course-content">
+                  <h3>
+                    <a href={event.data.url} target="_blank" rel="noopener">{event.data.title}</a>
+                  </h3>
+                  <p class="description">{event.data.description}</p>
+              <!-- Date & Time with Icons -->
+              <div class="text-sm text-gray-600 mb-2 space-y-1">
+                <div class="flex items-center">
+                  <!-- Calendar Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <time datetime={event.data.start.toISOString()}>
+                    {new Date(event.data.start).toLocaleDateString('en-GB', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' })}
+                  </time>
+                </div>
+
+                <div class="flex items-center">
+                  <!-- Clock Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <time>
+                    {new Date(event.data.start).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false })} –{' '}
+                    {new Date(event.data.end).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false })} GMT
+                  </time>
+                </div>
+              </div>
+
+                  {event.data.instructor && (<div class="trainer d-flex justify-content-between align-items-center"> <div class="trainer-profile d-flex align-items-center"> <img src="/img/person/ryan.jpg" class="img-fluid" alt="Ryan Laird"> <a href="../trainers" class="trainer-link">Ryan Laird</a> </div> </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-    <CTA/>
-    </main>
-</Layout> 
+
+    <!-- CTA Section -->
+    <div class="cta-box section-title" data-aos="fade-up">
+      <h2>Get in touch</h2>
+      <p>
+        Explore how Green Orbit Academy can support your professional development or organisational capability building. Connect with us to discuss learning opportunities tailored to your needs.
+      </p>
+      <a href="contact" class="btn-getstarted"><strong>Contact Us</strong></a>
+    </div>
+
+  </main>
+</Layout>

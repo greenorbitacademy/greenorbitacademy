@@ -1,0 +1,95 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Luma//Green Orbit Academy//EN
+X-WR-CALNAME:Green Orbit Academy
+X-WR-CALDESC:Luma Calendar
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+
+BEGIN:VEVENT
+DTSTART:20260217T120000Z
+DTEND:20260217T124500Z
+DTSTAMP:20260123T160912Z
+ORGANIZER;CN="Ryan Laird":MAILTO:calendar-invite@lu.ma
+UID:evt-rflJQ28FsNExlev@events.lu.ma
+SUMMARY:From ESG to Impact: What Actually Drives Growth
+DESCRIPTION:This webinar cuts through the noise to explore how ESG and sustainability can be used as practical growth levers. Learn where ESG genuinely influences customer trust, investor confidence, and long-term resilience.
+LOCATION:https://luma.com/event/evt-rflJQ28FsNExlev
+ATTACH;FMTTYPE=image/png:https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/fs/687bcb9d-a0d8-46cb-a886-f58af006a0e6.png
+SEQUENCE:191347752
+STATUS:TENTATIVE
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART:20260218T173000Z
+DTEND:20260218T181500Z
+DTSTAMP:20260123T160912Z
+ORGANIZER;CN="Ryan Laird":MAILTO:calendar-invite@lu.ma
+UID:evt-YLoA9DoPBV9ap1W@events.lu.ma
+SUMMARY:Becoming Credible Early in Sustainability & Space
+DESCRIPTION:Many students are unsure how to translate their studies into meaningful careers in sustainability or space. This webinar explores the variety of roles in sustainability, ESG, and space sectors, the skills employers look for in entry-level positions, and how to build a career path that balances impact and professional growth.
+LOCATION:https://luma.com/event/evt-YLoA9DoPBV9ap1W
+ATTACH;FMTTYPE=image/png:https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/fs/687bcb9d-a0d8-46cb-a886-f58af006a0e6.png
+SEQUENCE:191347752
+STATUS:TENTATIVE
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART:20260303T120000Z
+DTEND:20260303T124500Z
+DTSTAMP:20260123T160912Z
+ORGANIZER;CN="Ryan Laird":MAILTO:calendar-invite@lu.ma
+UID:evt-DXI0JPcPZOeCBRo@events.lu.ma
+SUMMARY:Avoiding Greenwashing While Scaling Your Brand
+DESCRIPTION:This webinar covers how to spot and avoid greenwashing while scaling your brand. Learn practical tips to communicate sustainability authentically, balance marketing with ethics, and demonstrate real impact to stakeholders.
+LOCATION:https://luma.com/event/evt-DXI0JPcPZOeCBRo
+ATTACH;FMTTYPE=image/png:https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/fs/687bcb9d-a0d8-46cb-a886-f58af006a0e6.png
+SEQUENCE:191347752
+STATUS:TENTATIVE
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART:20260304T173000Z
+DTEND:20260304T181500Z
+DTSTAMP:20260123T160912Z
+ORGANIZER;CN="Ryan Laird":MAILTO:calendar-invite@lu.ma
+UID:evt-EmzGmVlT1yEIzQa@events.lu.ma
+SUMMARY:Careers with Impact: What Sustainability Roles Really Look Like
+DESCRIPTION:Explore the variety of sustainability roles, the skills and experiences employers look for, and how to plan a career path that balances impact and professional growth. Perfect for students and early-career professionals seeking meaningful roles.
+LOCATION:https://luma.com/event/evt-EmzGmVlT1yEIzQa
+ATTACH;FMTTYPE=image/png:https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/fs/687bcb9d-a0d8-46cb-a886-f58af006a0e6.png
+SEQUENCE:191347752
+STATUS:TENTATIVE
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART:20260317T130000Z
+DTEND:20260317T134500Z
+DTSTAMP:20260123T160912Z
+ORGANIZER;CN="Ryan Laird":MAILTO:calendar-invite@lu.ma
+UID:evt-lmZexBQcDMTUFlI@events.lu.ma
+SUMMARY:Net Zero: What’s Practical, What’s Performative
+DESCRIPTION:Examine practical vs performative approaches to Net Zero. This webinar explores actionable strategies, realistic targets, and lessons for students and early-career professionals aiming to drive real climate impact.
+LOCATION:https://luma.com/event/evt-lmZexBQcDMTUFlI
+ATTACH;FMTTYPE=image/png:https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/fs/687bcb9d-a0d8-46cb-a886-f58af006a0e6.png
+SEQUENCE:191347752
+STATUS:TENTATIVE
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART:20260318T173000Z
+DTEND:20260318T181500Z
+DTSTAMP:20260123T160912Z
+ORGANIZER;CN="Ryan Laird":MAILTO:calendar-invite@lu.ma
+UID:evt-PNn5PyiE3YpT77g@events.lu.ma
+SUMMARY:Building Your Personal Impact Portfolio
+DESCRIPTION:Learn to document and showcase projects, research, or volunteering. Build a portfolio that demonstrates problem-solving and innovation. Gain tips for CVs, LinkedIn profiles, and interviews to present yourself as a credible, impact-driven candidate.
+LOCATION:https://luma.com/event/evt-PNn5PyiE3YpT77g
+ATTACH;FMTTYPE=image/png:https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/fs/687bcb9d-a0d8-46cb-a886-f58af006a0e6.png
+SEQUENCE:191347752
+STATUS:TENTATIVE
+END:VEVENT
+
+END:VCALENDAR

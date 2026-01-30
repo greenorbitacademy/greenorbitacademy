@@ -1,12 +1,92 @@
 [
-  { "name": "SEO", "color": "0E8A16", "description": "Search engine optimisation" },
-  { "name": "Schema", "color": "1D76DB", "description": "Structured data and schema markup" },
-  { "name": "enhancement", "color": "A2EEEF", "description": "New feature or improvement" },
-  { "name": "task", "color": "C2E0C6", "description": "Implementation task" },
-  { "name": "decision", "color": "FBCA04", "description": "Decision required" },
-  { "name": "content", "color": "D4C5F9", "description": "Content-related work" },
-  { "name": "UI", "color": "F9D0C4", "description": "User interface / design" },
-  { "name": "feature", "color": "5319E7", "description": "Functional feature" },
-  { "name": "Performance", "color": "BFDADC", "description": "Speed and performance improvements" },
-  { "name": "Social", "color": "E99695", "description": "Social sharing and metadata" }
+  {
+    "name": "academy",
+    "color": "0E8A16",
+    "description": "Green Orbit Academy programmes and delivery"
+  },
+  {
+    "name": "workshop",
+    "color": "1D76DB",
+    "description": "Hands-on workshops and applied training"
+  },
+  {
+    "name": "masterclass",
+    "color": "5319E7",
+    "description": "Advanced masterclasses and strategic training"
+  },
+  {
+    "name": "content",
+    "color": "D4C5F9",
+    "description": "Content creation and curriculum development"
+  },
+  {
+    "name": "delivery",
+    "color": "C2E0C6",
+    "description": "Programme delivery and facilitation"
+  },
+  {
+    "name": "strategy",
+    "color": "0052CC",
+    "description": "Strategic positioning and planning"
+  },
+  {
+    "name": "marketing",
+    "color": "F9D0C4",
+    "description": "Marketing, campaigns, and brand development"
+  },
+  {
+    "name": "communications",
+    "color": "E99695",
+    "description": "Communications, messaging, and storytelling"
+  },
+  {
+    "name": "storytelling",
+    "color": "BFDADC",
+    "description": "Narrative design and persuasive storytelling"
+  },
+  {
+    "name": "AI",
+    "color": "000000",
+    "description": "Artificial intelligence and digital skills"
+  },
+  {
+    "name": "digital",
+    "color": "0366D6",
+    "description": "Digital transformation and tools"
+  },
+  {
+    "name": "ESG",
+    "color": "2DA44E",
+    "description": "Environmental, Social, and Governance topics"
+  },
+  {
+    "name": "sustainability",
+    "color": "1A7F37",
+    "description": "Sustainability strategy and implementation"
+  },
+  {
+    "name": "net-zero",
+    "color": "0A3069",
+    "description": "Net Zero and decarbonisation strategies"
+  },
+  {
+    "name": "climate",
+    "color": "005A9C",
+    "description": "Climate action and environmental impact"
+  },
+  {
+    "name": "space",
+    "color": "2B356B",
+    "description": "Space sector-specific content and strategy"
+  },
+  {
+    "name": "stakeholders",
+    "color": "FBCA04",
+    "description": "Stakeholder engagement and mapping"
+  },
+  {
+    "name": "leadership",
+    "color": "6F42C1",
+    "description": "Leadership development and executive capability"
+  }
 ]
