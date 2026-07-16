@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { login, signup, getToken } from '../../lib/portalApi';
 
 export default function LoginForm() {
-  const [mode, setMode] = useState('login'); // 'login' | 'signup'
+  const [mode, setMode] = useState('login');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  if (typeof window !== 'undefined' && getToken()) {
-    window.location.href = '/portal/dashboard';
-  }
+  useEffect(() => {
+    if (getToken()) {
+      window.location.href = '/portal/dashboard';
+    }
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +27,7 @@ export default function LoginForm() {
       }
       window.location.href = '/portal/dashboard';
     } catch (err) {
-      setError(err.message);
+      setError(err.message || 'Failed to sign in');
     } finally {
       setLoading(false);
     }
@@ -63,6 +65,7 @@ export default function LoginForm() {
             />
           </div>
         )}
+
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700">Email</label>
           <input
@@ -73,6 +76,7 @@ export default function LoginForm() {
             className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary focus:outline-none"
           />
         </div>
+
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700">Password</label>
           <input
