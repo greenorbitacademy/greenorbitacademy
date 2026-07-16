@@ -1,0 +1,22 @@
+---
+const { provider, videoId, title } = Astro.props;
+
+const src =
+  provider === 'youtube'
+    ? `https://www.youtube-nocookie.com/embed/${videoId}`
+    : provider === 'vimeo'
+    ? `https://player.vimeo.com/video/${videoId}`
+    : null;
+---
+
+{src && (
+  <div class="aspect-video w-full overflow-hidden rounded-xl bg-black">
+    <iframe
+      src={src}
+      title={title}
+      class="h-full w-full"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </div>
+)}

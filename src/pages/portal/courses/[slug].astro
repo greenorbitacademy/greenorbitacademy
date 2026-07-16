@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PortalNav from '../../../components/portal/PortalNav.jsx';
+import CourseProgress from '../../../components/portal/CourseProgress.jsx';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('courses', ({ data }) => data.modules && data.modules.length > 0);
+  return entries.map(entry => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const courseId = entry.data.courseId || entry.slug;
+---
+<Layout title={`${entry.data.title} | Green Orbit Academy Portal`}>
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <PortalNav client:load />
+    <h1 class="mb-1 text-2xl font-bold">{entry.data.title}</h1>
+    <p class="mb-8 text-sm text-slate-500">{entry.data.summary}</p>
+    <CourseProgress client:load courseId={courseId} courseSlug={entry.slug} modules={entry.data.modules} />
+  </main>
+</Layout>

@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LoginForm from '../../components/portal/LoginForm.jsx';
+---
+<Layout title="Student Login | Green Orbit Academy">
+  <main class="mx-auto max-w-6xl px-4 py-20">
+    <h1 class="mb-8 text-center text-3xl font-bold">Student Portal</h1>
+    <LoginForm client:load />
+  </main>
+</Layout>

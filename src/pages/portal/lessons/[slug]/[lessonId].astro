@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../../layouts/Layout.astro';
+import PortalNav from '../../../../components/portal/PortalNav.jsx';
+import VideoEmbed from '../../../../components/portal/VideoEmbed.astro';
+import QuizWidget from '../../../../components/portal/QuizWidget.jsx';
+import MarkComplete from '../../../../components/portal/MarkComplete.jsx';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('courses', ({ data }) => data.modules && data.modules.length > 0);
+  const paths = [];
+
+  for (const entry of entries) {
+    // Flatten all lessons in course order so we can compute next/prev.
+    const flat = entry.data.modules.flatMap(m => m.lessons.map(l => ({ ...l, moduleTitle: m.title })));
+
+    flat.forEach((lesson, i) => {
+      paths.push({
+        params: { slug: entry.slug, lessonId: lesson.id },
+        props: {
+          entry,
+          lesson,
+          nextLessonId: flat[i + 1]?.id ?? null,
+        },
+      });
+    });
+  }
+  return paths;
+}
+
+const { entry, lesson, nextLessonId } = Astro.props;
+const courseId = entry.data.courseId || entry.slug;
+const nextHref = nextLessonId ? `/portal/lessons/${entry.slug}/${nextLessonId}` : `/portal/courses/${entry.slug}`;
+---
+<Layout title={`${lesson.title} | ${entry.data.title}`}>
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <PortalNav client:load />
+
+    <a href={`/portal/courses/${entry.slug}`} class="mb-4 inline-block text-sm text-slate-500 hover:text-primary">
+      ← {entry.data.title}
+    </a>
+    <h1 class="mb-1 text-2xl font-bold">{lesson.title}</h1>
+    {lesson.summary && <p class="mb-6 text-slate-600">{lesson.summary}</p>}
+
+    {lesson.videoProvider && lesson.videoId && (
+      <div class="mb-6">
+        <VideoEmbed provider={lesson.videoProvider} videoId={lesson.videoId} title={lesson.title} />
+      </div>
+    )}
+
+    {lesson.presentationEmbedUrl && (
+      <div class="mb-6 aspect-video w-full overflow-hidden rounded-xl border border-slate-200">
+        <iframe src={lesson.presentationEmbedUrl} title={`${lesson.title} slides`} class="h-full w-full" allowfullscreen />
+      </div>
+    )}
+
+    <div class="mt-8">
+      {lesson.hasQuiz ? (
+        <QuizWidget client:load courseId={courseId} lessonId={lesson.id} nextHref={nextHref} />
+      ) : (
+        <MarkComplete client:load courseId={courseId} lessonId={lesson.id} nextHref={nextHref} />
+      )}
+    </div>
+  </main>
+</Layout>

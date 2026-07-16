@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PortalNav from '../../components/portal/PortalNav.jsx';
+import DashboardCourses from '../../components/portal/DashboardCourses.jsx';
+
+const entries = await getCollection('courses', ({ data }) => data.modules && data.modules.length > 0);
+const courses = entries.map(e => ({
+  courseId: e.data.courseId || e.slug,
+  slug: e.slug,
+  title: e.data.title,
+  image: e.data.image,
+  totalLessons: e.data.modules.reduce((n, m) => n + m.lessons.length, 0),
+}));
+---
+<Layout title="My Courses | Green Orbit Academy">
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <PortalNav client:load />
+    <DashboardCourses client:load courses={courses} />
+  </main>
+</Layout>
